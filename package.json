@@ -1,0 +1,26 @@
+{
+  "name": "codecampprojecttwo",
+  "version": "1.0.0",
+  "description": "UT Code Camp Project Two",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesquitin/codeCampProjectTwo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "mysql": "*",
+    "express-handlebars": "*",
+    "sequelize": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/jesquitin/codeCampProjectTwo/issues"
+  },
+  "homepage": "https://github.com/jesquitin/codeCampProjectTwo#readme"
+}
