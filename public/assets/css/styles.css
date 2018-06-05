@@ -1,1 +1,44 @@
 
+#job-hunt {
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    font-family: monospace;
+    font-size: 20px;
+    white-space: nowrap;
+    text-shadow: 0 2px 2px rgba(#000, 0.9);
+  }
+
+
+button {
+    font-size: .618rem;
+    height: 10%;
+    width: 15%;
+    margin: 2%;
+    margin-left: 5%;
+    margin-top: 10%
+}
+
+button:hover,
+button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+li:hover {
+    transform: translateY(-0.25em);
+}
+
+#companies {
+    color: #28a745;
+}
+#contacts {
+    color: #6c757d
+}
+#job-openings {
+    color: #17a2b8;
+}
+#activities {
+    color: #343a40;
+}
+
