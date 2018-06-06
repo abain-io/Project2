@@ -1,10 +1,22 @@
 
+// Dependencies
+var express = require("express");
+var exphbs = require("express-handlebars");
+
+
 // // Dependencies
 // var express = require("express");
 // var exphbs = require("express-handlebars");
 // var passport = require("./config/passport");
 
 
+
+
+// Set Handlebars as the default templating engine.
+app.engine("handlebars", exphbs({
+    defaultLayout: "main"
+}));
+app.set("view engine", "handlebars");
 
 // // Set the port of our application
 // // process.env.PORT lets the port be set by Heroku
@@ -51,6 +63,7 @@
 // // //static directory to be served
 // // app.use(express.static("public"));
 
+
 // // //Routes
 // // //=============================
 // // require("./routes/api-routes.js")(app);
@@ -85,9 +98,20 @@ var passport = require("./config/passport");
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
+
+//Setup Express app to handle data parsing
+
+//parse aplication/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+//parse application/jsondata
+
 // Creating express app and configuring middleware needed for authentication
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(bodyParser.json());
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
@@ -99,9 +123,15 @@ app.use(passport.session());
 require("./routes/html-routes.js")(app);
 require("./routes/login-api-routes.js")(app);
 
-// Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-  });
+
+//Start the server to bigin to listen
+
+db.sequelize.sync({
+    force: false
+}).then(function () {
+    app.listen(PORT, function () {
+        console.log("App listening on PORT: " + PORT);
+    });
+
 });
+
