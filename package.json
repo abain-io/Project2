@@ -13,9 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "*",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
     "express": "*",
     "express-handlebars": "*",
+    "express-session": "^1.15.6",
     "mysql": "*",
     "mysql2": "^1.5.3",
     "npm": "^6.1.0",
