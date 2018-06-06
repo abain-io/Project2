@@ -15,8 +15,13 @@
   "dependencies": {
     "body-parser": "*",
     "express": "*",
-    "mysql": "*",
     "express-handlebars": "*",
+    "mysql": "*",
+
+    "mysql2": "^1.5.3",
+
+    "npm": "^6.1.0",
+
     "sequelize": "*"
   },
   "bugs": {

@@ -1,0 +1,200 @@
+
+#job-hunt {
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    font-family: monospace;
+    font-size: 20px;
+    white-space: nowrap;
+    text-shadow: 0 2px 2px rgba(#000, 0.9);
+    color: black;
+    margin-left: 40%;
+    height: 10%;
+  }
+  #job-heading {
+      color: black;
+  }
+
+
+button {
+    font-size: .618rem;
+    height: 10%;
+    width: 15%;
+    margin: 2%;
+    margin-left: 5%;
+    margin-top: 10%
+}
+
+button:hover,
+button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+li:hover {
+    transform: translateY(-0.25em);
+}
+
+#companies {
+    color: #28a745;
+}
+#contacts {
+    color: #6c757d
+}
+#job-openings {
+    color: #17a2b8;
+}
+#activities {
+    color: #343a40;
+}
+/* floating social */
+
+a {
+    text-decoration: none;
+  }
+  
+  #btn1 {
+    top: 400px;
+  }
+  
+  #btn2 {
+    top: 450px;
+  }
+  
+  #btn3 {
+    top: 500px;
+  }
+  #btn4 {
+    top: 550px;
+  }
+  
+  div#btn1 {
+    background-color: #365899;
+    color: #ffffff;
+    text-align: right;
+    border: none;
+    border-radius: 30px;
+    width: 600px;
+    height: 40px;
+    position: fixed;
+    left: 1170px;
+    transition: .7s ease;
+  }
+
+  div#btn2 {
+    background-color: #0077B5;
+    color: #ffffff;
+    text-align: right;
+    border: none;
+    border-radius: 30px;
+    width: 600px;
+    height: 40px;
+    position: fixed;
+    left: 1170px;
+    transition: .7s ease;
+  }
+  div#btn3 {
+    background-color: #24292e;
+    color: #ffffff;
+    text-align: right;
+    border: none;
+    border-radius: 30px;
+    width: 600px;
+    height: 40px;
+    position: fixed;
+    left: 1170px;
+    transition: .7s ease;
+  }
+  div#btn4 {
+    background-color: #1da1f2;
+    color: #ffffff;
+    text-align: right;
+    border: none;
+    border-radius: 30px;
+    width: 600px;
+    height: 40px;
+    position: fixed;
+    left: 1170px;
+    transition: .7s ease;
+  }
+  
+  div#btn1:hover {
+    background-color: #ffffff;
+    text-align: left;
+    color: #365899;
+    position: fixed;
+    left: 800px;
+    width: 600px;
+    border-radius: 0px;
+    box-shadow: 0px 5px 0px #365899;
+  }
+  div#btn2:hover {
+    background-color: #ffffff;
+    text-align: left;
+    color: #0077B5;
+    position: fixed;
+    left: 800px;
+    width: 600px;
+    border-radius: 0px;
+    box-shadow: 0px 5px 0px #0077B5;
+  }
+  div#btn3:hover {
+    background-color: #ffffff;
+    text-align: left;
+    color: #24292e;
+    position: fixed;
+    left: 800px;
+    width: 600px;
+    border-radius: 0px;
+    box-shadow: 0px 5px 0px #24292e;
+  }
+  div#btn4:hover {
+    background-color: #ffffff;
+    text-align: left;
+    color: #1da1f2;
+    position: fixed;
+    left: 800px;
+    width: 600px;
+    border-radius: 0px;
+    box-shadow: 0px 5px 0px #1da1f2;
+  }
+  div.button:active {
+    background-color: #2c3e50;
+    transition: 0s;
+    color: #ecf0f1;
+  }
+  .contact-us {
+      float: right;
+  }
+  .animated-job {
+      margin-top: 25%;
+  }
+  .fa-facebook-f, .fa-linkedin-in, .fa-github, .fa-twitter {
+      float: left;
+      margin-left: 3%;
+      margin-top: 2%;
+  }
+  .forgot-password {
+      padding: 10px;
+      color: black;
+  }
+  .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    margin-left: -7%;
+    margin-top: 1%;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.forgot-password:hover .tooltiptext {
+    visibility: visible;
+}
+
