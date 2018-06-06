@@ -121,7 +121,7 @@ a {
   div#btn1:hover {
     background-color: #ffffff;
     text-align: left;
-    color: black;
+    color: #365899;
     position: fixed;
     left: 800px;
     width: 600px;
@@ -131,7 +131,7 @@ a {
   div#btn2:hover {
     background-color: #ffffff;
     text-align: left;
-    color: black;
+    color: #0077B5;
     position: fixed;
     left: 800px;
     width: 600px;
@@ -141,7 +141,7 @@ a {
   div#btn3:hover {
     background-color: #ffffff;
     text-align: left;
-    color: black;
+    color: #24292e;
     position: fixed;
     left: 800px;
     width: 600px;
@@ -151,7 +151,7 @@ a {
   div#btn4:hover {
     background-color: #ffffff;
     text-align: left;
-    color: black;
+    color: #1da1f2;
     position: fixed;
     left: 800px;
     width: 600px;
@@ -197,3 +197,4 @@ a {
 .forgot-password:hover .tooltiptext {
     visibility: visible;
 }
+
