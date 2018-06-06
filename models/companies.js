@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
       // ID will be provided automatically by Sequelize
       // Giving the Company model a name of type STRING
       coName: DataTypes.STRING,
-      coJobsUrl: DataTypes.url,
+      coJobsUrl: DataTypes.STRING,
       coPriority: Integer
     });
     // The following is how we associated (joined) Author to Posts in blogger app, just for our info
