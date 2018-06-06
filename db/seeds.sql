@@ -1,2 +1,2 @@
-USE jobHunt_db
+USE jobHunt_db;
 

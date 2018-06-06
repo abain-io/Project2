@@ -8,9 +8,9 @@ var Messenger = function(el){
       m.current_length = 0;
       m.fadeBuffer = false;
       m.messages = [
-        'Job Hunt',
-        'and management',
-        'At one place!'
+        'You Solution To Job Hunt',
+        'And Management',
+        'At One Place!'
       ];
       
       setTimeout(m.animateIn, 100);
@@ -90,3 +90,4 @@ var Messenger = function(el){
   
   console.clear();
   var messenger = new Messenger($('#job-hunt'));
+  
