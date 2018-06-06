@@ -90,3 +90,4 @@ var Messenger = function(el){
   
   console.clear();
   var messenger = new Messenger($('#job-hunt'));
+  
