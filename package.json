@@ -18,12 +18,11 @@
     "express": "*",
     "express-handlebars": "*",
     "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
     "mysql": "*",
     "mysql2": "^1.5.3",
-
     "npm": "^6.1.0",
     "passport": "^0.4.0",
-
     "sequelize": "*"
   },
   "bugs": {
