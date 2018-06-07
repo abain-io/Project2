@@ -5,9 +5,8 @@ module.exports = function(sequelize, DataTypes) {
       // Giving the Company model a name of type STRING
       coName: DataTypes.STRING,
       coJobsUrl: DataTypes.STRING,
-      coJobsUrl: DataTypes.STRING,
-      coPriority: Integer
-      coPriority: DataTypes.STRING
+
+      coPriority: DataTypes.INTEGER
 
 
     });

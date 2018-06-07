@@ -18,9 +18,17 @@
     "express": "*",
     "express-handlebars": "*",
     "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
     "mysql": "*",
     "mysql2": "^1.5.3",
+<<<<<<< HEAD
      "npm": "^6.1.0",
+||||||| merged common ancestors
+
+    "npm": "^6.1.0",
+=======
+    "npm": "^6.1.0",
+>>>>>>> 6c07d2e342c598f104ab5793c5a8a563dd10d4c0
     "passport": "^0.4.0",
     "sequelize": "*"
   },
