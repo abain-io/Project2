@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes){
     JobOpening.associate = function(models) {
         // Associating Author with Posts
         // When an Author is deleted, also delete any associated Posts
-        JobOpening.belongsTo(models.companies, {
+        JobOpening.belongsTo(models.Company, {
           // onDelete: "cascade" // do I need this??? **************************
         });
       };

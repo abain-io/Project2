@@ -19,9 +19,8 @@ module.exports = function(sequelize, DataTypes){
         //values ( ( select id from empTalble where employer = 'company name'), )
     });
     ActionItem.associate = function(models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
-        ActionItem.belongsTo(models.job_openings, {
+        // Associating ActionItem with job opening
+        ActionItem.belongsTo(models.JobOpening, {
           //onDelete: "cascade"
         });
       };
