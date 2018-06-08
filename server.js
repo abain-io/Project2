@@ -13,10 +13,10 @@ var exphbs = require("express-handlebars");
 
 
 // Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({
-    defaultLayout: "main"
-}));
-app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({
+//     defaultLayout: "main"
+// }));
+// app.set("view engine", "handlebars");
 
 // // Set the port of our application
 // // process.env.PORT lets the port be set by Heroku
