@@ -92,4 +92,100 @@ var Messenger = function(el){
   // console.clear();
   var messenger = new Messenger($('#job-hunt'));
   
+
+    $(function pmatch() {
+        $("#submit-signup").click(function () {
+            var result = true;
+            var password = $("#password-input").val();
+            var confirmPassword = $("#confirmPassword-input").val();
+            var firstName = $("#firstName").val()
+            var lastName = $("#lastName").val()
+            var email = $("#email-input").val()
+            if(firstName == "") {
+              $(".error-message1").text("*First Name can not be empty").fadeIn();
+              $(".error-message1").css("color", "red");
+              console.log("*empty");
+              result = false;             
+            }
+            if(lastName == "") {
+              $(".error-message2").text("*Last Name can not be empty").fadeIn();
+              $(".error-message2").css("color", "red");
+              console.log("*empty");
+              result = false;                          
+            }
+            if(email == "") {
+              $(".error-message3").text("*Email can not be empty").fadeIn();
+              $(".error-message3").css("color", "red");
+              console.log("*empty");
+              result = false;                           
+            }
+            if(password == "") {
+              $(".error-message4").text("*Password can not be empty").fadeIn();
+              $(".error-message4").css("color", "red");
+              console.log("*empty");    
+              result = false;                           
+            }
+            if (password != confirmPassword) {
+              $(".error-message5").text("* Password do not match").fadeIn();
+              $(".error-message5").css("color", "red");
+              console.log("* Password do not match"); 
+              result = false;                           
+            } 
+            if(confirmPassword == "") {
+              $(".error-message5").text("*Confirm Password can not be empty").fadeIn();
+              $(".error-message5").css("color", "red");
+              console.log("*empty");        
+              result = false;                           
+            }
+            return result;            
+        });
+    });
+
+    $(function fname() {
+      $("#submit-signup").click(function () {
+          var password = $("#password-input").val();
+          var confirmPassword = $("#confirmPassword-input").val();
+          var firstName = $("#firstName").val()
+          var lastName = $("#lastName").val()
+          var email = $("#email-input").val()
+        });
+      });
   
+
+
+
+
+
+
+
+
+         //   else if(firstName == null) {
+
+          //     $(".error-message1").text("*Required Field can not be empty").fadeIn();
+          //     $(".error-message1").css("color", "red");
+          //     console.log("*empty");
+
+          //   } else if(lastName == null) {
+          //     $(".error-message2").text("*Required Field can not be empty").fadeIn();
+          //     $(".error-message2").css("color", "red");
+          //     console.log("*empty");
+              
+          //   } else if(email == null) {
+          //   $(".error-message3").text("*Required Field can not be empty").fadeIn();
+          //   $(".error-message3").css("color", "red");
+          //   console.log("*empty");
+            
+          // } else if(password == null) {
+          //   $(".error-message4").text("*Required Field can not be empty").fadeIn();
+          //   $(".error-message4").css("color", "red");
+          //   console.log("*empty");
+
+          // } else if(confirmPassword == null) {
+          //   $(".error-message5").text("*Required Field can not be empty").fadeIn();
+          //   $(".error-message5").css("color", "red");
+          //   console.log("*empty");
+          // }
+
+          // return true;
+          // console.log("Yippppieyyyy");
+

@@ -23,6 +23,8 @@ module.exports = function(sequelize, DataTypes) {
     // onDelete: "cascade"
     //   });
     // };
-  
+    // Company.associate = function(models) {Company.belongsToMany(models.Contact, { as: 'Contact', through: { model: CompanyContact, unique: false }, foreignKey: 'contactId' });}
+    
+
     return Company;
-  };
+  }; 
