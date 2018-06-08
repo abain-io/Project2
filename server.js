@@ -1,7 +1,7 @@
 
 // Dependencies
-var express = require("express");
-var exphbs = require("express-handlebars");
+// var express = require("express");
+// var exphbs = require("express-handlebars");
 
 
 // // Dependencies
@@ -102,9 +102,9 @@ var db = require("./models");
 //Setup Express app to handle data parsing
 
 //parse aplication/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+// app.use(bodyParser.urlencoded({
+//     extended: true
+// }));
 
 //parse application/jsondata
 
