@@ -5,7 +5,10 @@ module.exports = function(sequelize, DataTypes) {
       // Giving the Company model a name of type STRING
       coName: DataTypes.STRING,
       coJobsUrl: DataTypes.STRING,
+
       coPriority: DataTypes.INTEGER
+
+
     });
     // The following is how we associated (joined) Author to Posts in blogger app, just for our info
     // We will be creating a companyContact model and then using something like:
