@@ -26,4 +26,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/mainmenu.html"));
   });
 
+  // cms route loads cms.html
+  app.get("/contacts", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/testcontacts.html"));
+  });
+
+  // blog route loads blog.html
+  app.get("/companies", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/companies.html"));
+  });
+
 };

@@ -1,7 +1,7 @@
 
 // Dependencies
-var express = require("express");
-var exphbs = require("express-handlebars");
+//var express = require("express");
+//var exphbs = require("express-handlebars");
 
 
 // // Dependencies
@@ -13,10 +13,10 @@ var exphbs = require("express-handlebars");
 
 
 // Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({
-    defaultLayout: "main"
-}));
-app.set("view engine", "handlebars");
+//app.engine("handlebars", exphbs({
+//  defaultLayout: "main"
+//}));
+//app.set("view engine", "handlebars");
 
 // // Set the port of our application
 // // process.env.PORT lets the port be set by Heroku
@@ -102,9 +102,9 @@ var db = require("./models");
 //Setup Express app to handle data parsing
 
 //parse aplication/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+//app.use(bodyParser.urlencoded({
+   // extended: true
+//}));
 
 //parse application/jsondata
 
@@ -122,6 +122,8 @@ app.use(passport.session());
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/login-api-routes.js")(app);
+require("./routes/contacts-api-routes")(app);
+require("./routes/companies-api-routes.js")(app);
 
 
 //Start the server to bigin to listen
