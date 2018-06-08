@@ -15,7 +15,7 @@ module.exports = function(app){
         res.json("/mainmenu");
     });
 
-    app.post("/api/login", function(req, res) {
+    app.post("/api/signup", function(req, res) {
         console.log(req.body);
         db.User.create({
           firstName: req.body.firstName,
@@ -27,8 +27,8 @@ module.exports = function(app){
           res.redirect(307, "/api/mainmenu");
         }).catch(function(err) {
           console.log(err);
-          res.json(err);
-          // res.status(422).json(err.errors[0].message);
+          // res.json(err);
+          res.status(422).json(err.errors[0].message);
         });
       });
       app.get("/logout", function(req, res) {

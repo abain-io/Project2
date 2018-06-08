@@ -6,7 +6,8 @@ module.exports = function(sequelize, DataTypes) {
       coName: DataTypes.STRING,
       coJobsUrl: DataTypes.STRING,
 
-      coPriority: DataTypes.STRING
+      coPriority: DataTypes.INTEGER
+
 
     });
     // The following is how we associated (joined) Author to Posts in blogger app, just for our info
