@@ -1,7 +1,7 @@
 // activities.js to create activities table, which contains action items 
 // which will be associated with specific job openings
 module.exports = function(sequelize, DataTypes){
-    var actionItem = sequelize.define("actionItem", {
+    var ActionItem = sequelize.define("ActionItem", {
         action_item: {
             type: DataTypes.STRING
         },
@@ -18,12 +18,11 @@ module.exports = function(sequelize, DataTypes){
         //insert into Contacts (employerID, value)
         //values ( ( select id from empTalble where employer = 'company name'), )
     });
-    actionItem.associate = function(models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
-        actionItem.belongsTo(models.job_opening, {
+    ActionItem.associate = function(models) {
+        // Associating ActionItem with job opening
+        ActionItem.belongsTo(models.JobOpening, {
           //onDelete: "cascade"
         });
       };
-    return actionItem;
+    return ActionItem;
 };
