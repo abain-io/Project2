@@ -2,7 +2,7 @@
 // associated with a company in the companies table
 
 module.exports = function(sequelize, DataTypes){
-    var jobOpening = sequelize.define("jobOpening", {
+    var JobOpening = sequelize.define("JobOpening", {
         jobPostingId: {
             type: DataTypes.STRING
         },
@@ -29,12 +29,12 @@ module.exports = function(sequelize, DataTypes){
         //insert into Contacts (employerID, value)
         //values ( ( select id from empTalble where employer = 'company name'), )
     });
-    jobOpening.associate = function(models) {
+    JobOpening.associate = function(models) {
         // Associating Author with Posts
         // When an Author is deleted, also delete any associated Posts
-        jobOpening.belongsTo(models.companies, {
+        JobOpening.belongsTo(models.companies, {
           // onDelete: "cascade" // do I need this??? **************************
         });
       };
-    return jobOpening;
+    return JobOpening;
 };

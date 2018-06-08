@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-    var Contacts = sequelize.define("Contacts", {
+    var Contact = sequelize.define("Contact", {
         first_name: {
             type: DataTypes.STRING
         },
@@ -16,5 +16,5 @@ module.exports = function(sequelize, DataTypes){
         //insert into Contacts (employerID, value)
         //values ( ( select id from empTalble where employer = 'company name'), )
     });
-    return Contacts;
+    return Contact;
 };
