@@ -15,14 +15,14 @@ module.exports = function(app) {
       query.AuthorId = req.query.id;
     }
     db.contacts.findAll({
-      where: query
+      // where: query
     }).then(function(dbContacts) {
       res.json(dbContacts);
     });
   });
 
   // Get route for retrieving a single contacts
-  app.get("/api/contactss/:id", function(req, res) {
+  app.get("/api/contacts/:id", function(req, res) {
     db.contacts.findOne({
       where: {
         id: req.params.id
@@ -33,15 +33,16 @@ module.exports = function(app) {
     });
   });
 
-  // contacts route for saving a new contacts
-  app.contacts("/api/contactss", function(req, res) {
+  // contacts route for saving a new contact
+  // next line was app.contacts - should be app.get or post????
+  app.post("/api/contacts", function(req, res) {
     db.contacts.create(req.body).then(function(dbContacts) {
       res.json(dbContacts);
     });
   });
 
   // DELETE route for deleting contactss
-  app.delete("/api/contactss/:id", function(req, res) {
+  app.delete("/api/contacts/:id", function(req, res) {
     db.contacts.destroy({
       where: {
         id: req.params.id
@@ -51,8 +52,8 @@ module.exports = function(app) {
     });
   });
 
-  // PUT route for updating contactss
-  app.put("/api/contactss", function(req, res) {
+  // PUT route for updating contacts
+  app.put("/api/contacts", function(req, res) {
     db.contacts.update(
       req.body,
       {

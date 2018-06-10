@@ -23,7 +23,7 @@ module.exports = function(app) {
         });
     });
 
-    app.delete("/api/companies/id:", function(req, res){
+    app.delete("/api/companies/:id", function(req, res){
         db.Company.destroy({
             where: {
                 id: req.params.id

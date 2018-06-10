@@ -3,15 +3,15 @@
 $("#add-btn").on("click", function(event) {
     event.preventDefault();
   
-    // Make a newBook object
-    var newContact = {
+    // Make a newCompany object
+    var newCompany = {
       coName: $("#coName").val().trim(),
       coJobUrl: $("#coJobUrl").val().trim(),
-      coPriority $("#coPriority").val().trim(),
+      coPriority: $("#coPriority").val().trim(),
           };
   
     // Send an AJAX POST-request with jQuery
-    $.post("/api/new", newContact)
+    $.post("/api/new", newCompany)
       // On success, run the following code
       .then(function(data) {
         // Log the data we found

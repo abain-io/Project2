@@ -5,9 +5,6 @@ module.exports = function(sequelize, DataTypes){
         action_item: {
             type: DataTypes.STRING
         },
-        resume_file_submitted: {
-            type:DataTypes.STRING
-        },
         due_date: {
            type: DataTypes.DATE
         },
