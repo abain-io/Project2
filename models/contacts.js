@@ -11,6 +11,9 @@ module.exports = function(sequelize, DataTypes){
         },
         phone_number: {
             type: DataTypes.STRING
+        },
+        work_phone: {
+            type: DataTypes.STRING
         }
         //need to include employer ID and Job ID.  get from other tables joins and 
         //insert into Contacts (employerID, value)

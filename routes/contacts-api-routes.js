@@ -23,7 +23,8 @@ module.exports = function(app) {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
-      phone_number: req.body.phone_number
+      phone_number: req.body.phone_number,
+      work_phone: req.body.work_phone
     });
   });
  // DELETE route for deleting contactss

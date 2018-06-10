@@ -7,7 +7,7 @@ $("#add-btn").on("click", function(event) {
     var newContact = {
       coName: $("#coName").val().trim(),
       coJobUrl: $("#coJobUrl").val().trim(),
-      coPriority $("#coPriority").val().trim(),
+      coPriority: $("#coPriority").val().trim(),
           };
   
     // Send an AJAX POST-request with jQuery

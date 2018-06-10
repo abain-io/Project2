@@ -8,8 +8,9 @@ $("#add-btn").on("click", function(event) {
     var newContact = {
       first_name: $("#firstName").val().trim(),
       last_name: $("#lastName").val().trim(),
-      email: $("#email").val().trim(),
-      phone_number: $("#phoneNumber").val().trim()
+      email: $("#email-iput").val().trim(),
+      phone_number: $("#contact-phone").val().trim(),
+      work_phone: $("#work-phone").val().trim()
     };
   
     // Send an AJAX POST-request with jQuery
@@ -23,8 +24,9 @@ $("#add-btn").on("click", function(event) {
     // Empty each input box by replacing the value with an empty string
     $("#firstName").val("");
     $("#lastName").val("");
-    $("#email").val("");
-    $("#phoneNumber").val("");
+    $("#email-input").val("");
+    $("#contact-phone").val("");
+    $("#work-phone").val("");
   
   });
   
