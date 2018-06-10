@@ -9,7 +9,8 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the contactss
-  app.get("/contacts", function(req, res) {
+  app.get("/api/all", function(req, res) {
+    console.log("This is working");
     db.Contacts.findAll({}).then(function(dbContacts) {
       res.json(dbContacts);
     });
@@ -18,14 +19,36 @@ module.exports = function(app) {
   app.post("/api/new", function(req, res) {
     console.log("New Contact:");
     console.log(req.body);
-    Contacts.create({
-      first_name: req.body.firstName,
-      last_name: req.body.lastName,
+    db.Contacts.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
       email: req.body.email,
-      phone_number: req.body.phoneNumber
+      phone_number: req.body.phone_number
     });
   });
+ // DELETE route for deleting contactss
+ app.delete("api/contact/:id", function(req, res) {
+  db.Contacts.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(dbContacts) {
+    res.json(dbContacts);
+  });
+});
 
+// PUT route for updating contactss
+app.put("api/contact", function(req, res) {
+  db.Contacts.update(
+    req.body,
+    {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbContacts) {
+    res.json(dbContacts);
+  });
+});
 
   
 };

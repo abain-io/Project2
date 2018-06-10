@@ -23,13 +23,8 @@
     "mysql2": "^1.5.3",
     "npm": "^6.1.0",
     "passport": "^0.4.0",
-<<<<<<< HEAD
-    "passport-local": "^1.0.0",
-||||||| merged common ancestors
-=======
     "passport-google-oauth": "^1.0.0",
     "passport-local": "^1.0.0",
->>>>>>> 551de572afc525261f265047a0547fb660315767
     "sequelize": "*"
   },
   "bugs": {
