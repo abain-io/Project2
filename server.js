@@ -1,18 +1,4 @@
 
-<<<<<<< HEAD
-// Dependencies
-//var express = require("express");
-//var exphbs = require("express-handlebars");
-
-
-||||||| merged common ancestors
-// Dependencies
-var express = require("express");
-var exphbs = require("express-handlebars");
-
-
-=======
->>>>>>> 551de572afc525261f265047a0547fb660315767
 // // Dependencies
 // var express = require("express");
 // var exphbs = require("express-handlebars");
@@ -24,20 +10,6 @@ var exphbs = require("express-handlebars");
 // // var passport = require("./config/passport");
 
 
-<<<<<<< HEAD
-// Set Handlebars as the default templating engine.
-//app.engine("handlebars", exphbs({
-//  defaultLayout: "main"
-//}));
-//app.set("view engine", "handlebars");
-||||||| merged common ancestors
-// Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({
-    defaultLayout: "main"
-}));
-app.set("view engine", "handlebars");
-=======
->>>>>>> 551de572afc525261f265047a0547fb660315767
 
 
 // // Set Handlebars as the default templating engine.
@@ -175,30 +147,6 @@ var passport = require("./config/passport");
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
-<<<<<<< HEAD
-
-//Setup Express app to handle data parsing
-
-//parse aplication/x-www-form-urlencoded
-//app.use(bodyParser.urlencoded({
-   // extended: true
-//}));
-
-//parse application/jsondata
-
-||||||| merged common ancestors
-
-//Setup Express app to handle data parsing
-
-//parse aplication/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-//parse application/jsondata
-
-=======
->>>>>>> 551de572afc525261f265047a0547fb660315767
 // Creating express app and configuring middleware needed for authentication
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));

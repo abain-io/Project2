@@ -1,10 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "job_hunt",
+    "password": "",
+    "database": "jobhunt_db",
     "host": "localhost",
-    "port":8889,
+    "port":3306,
     "dialect": "mysql"
   },
   "test": {
