@@ -5,7 +5,7 @@ $("#add-btn").on("click", function(event) {
     event.preventDefault();
   
     // Make a newBook object
-    var newBook = {
+    var newContact = {
       first_name: $("#firstName").val().trim(),
       last_name: $("#lastName").val().trim(),
       email: $("#email").val().trim(),
@@ -13,7 +13,7 @@ $("#add-btn").on("click", function(event) {
     };
   
     // Send an AJAX POST-request with jQuery
-    $.post("/api/new", newBook)
+    $.post("api/new", newContact)
       // On success, run the following code
       .then(function(data) {
         // Log the data we found
