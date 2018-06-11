@@ -137,6 +137,9 @@ var Messenger = function(el){
               console.log("*empty");        
               result = false;                           
             }
+            else {
+              alert("Signup Successful");
+            }
             return result;            
         });
     });

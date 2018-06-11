@@ -8,13 +8,13 @@ $("#add-btn").on("click", function(event) {
     var newContact = {
       first_name: $("#firstName").val().trim(),
       last_name: $("#lastName").val().trim(),
-      email: $("#email-iput").val().trim(),
+      email: $("#email-input").val().trim(),
       phone_number: $("#contact-phone").val().trim(),
       work_phone: $("#work-phone").val().trim()
     };
   
     // Send an AJAX POST-request with jQuery
-    $.post("api/new", newContact)
+    $.post("api/contacts/new", newContact)
       // On success, run the following code
       .then(function(data) {
         // Log the data we found
@@ -29,4 +29,8 @@ $("#add-btn").on("click", function(event) {
     $("#work-phone").val("");
   
   });
-  
+
+  // function --> create/return one single html item
+  // make call to get all contacts
+  // forEach contact return make a function to use that func
+  // 

@@ -20,7 +20,7 @@ $(document).ready(function() {
 
       };
 
-      console.log(userData);
+      // console.log(userData);
       
   
       if (!userData.firstName || !userData.lastName || !userData.email || !userData.password || !userData.confirmPassword) {
@@ -38,14 +38,16 @@ $(document).ready(function() {
     // Does a post to the signup route. If succesful, we are redirected to the members page
     // Otherwise we log any errors
     function signUpUser(firstName, lastName, email, password, confirmPassword) {
-      $.post("/api/signup", {
+      $.post("/auth/signup", {
         firstName: firstName,
         lastName: lastName,
         email: email,
         password: password,
         confirmPassword: confirmPassword
       }).then(function(data) {
-        window.location.replace(data);
+        console.log(data.path);
+       console.log(location);
+        // window.location.replace(location.origin + data.path);
         // If there's an error, handle it by throwing up a boostrap alert
       }).catch(handleLoginErr);
     }
