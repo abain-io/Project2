@@ -9,59 +9,49 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the contactss
-  app.get("/api/contacts", function(req, res) {
-    var query = {};
-    if (req.query.id) {
-      query.AuthorId = req.query.id;
+  app.get("/api/all", function(req, res) {
+    console.log("This is working");
+    db.Contacts.findAll({}).then(function(dbContacts) {
+      res.json(dbContacts);
+    });
+  });
+
+  app.post("/api/new", function(req, res) {
+    console.log("New Contact:");
+    console.log(req.body);
+    db.Contacts.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      phone_number: req.body.phone_number,
+      CompanyId: req.body.CompanyId
+    }).then(function(theContact) {
+      res.json(theContact);
+    })
+  });
+ // DELETE route for deleting contactss
+ app.delete("api/contact/:id", function(req, res) {
+  db.Contacts.destroy({
+    where: {
+      id: req.params.id
     }
-    db.contacts.findAll({
-      // where: query
-    }).then(function(dbContacts) {
-      res.json(dbContacts);
-    });
+  }).then(function(dbContacts) {
+    res.json(dbContacts);
   });
+});
 
-  // Get route for retrieving a single contacts
-  app.get("/api/contacts/:id", function(req, res) {
-    db.contacts.findOne({
+// PUT route for updating contactss
+app.put("api/contact", function(req, res) {
+  db.Contacts.update(
+    req.body,
+    {
       where: {
-        id: req.params.id
+        id: req.body.id
       }
     }).then(function(dbContacts) {
-      console.log(dbContacts);
-      res.json(dbContacts);
-    });
+    res.json(dbContacts);
   });
+});
 
-  // contacts route for saving a new contact
-  // next line was app.contacts - should be app.get or post????
-  app.post("/api/contacts", function(req, res) {
-    db.contacts.create(req.body).then(function(dbContacts) {
-      res.json(dbContacts);
-    });
-  });
-
-  // DELETE route for deleting contactss
-  app.delete("/api/contacts/:id", function(req, res) {
-    db.contacts.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbContacts) {
-      res.json(dbContacts);
-    });
-  });
-
-  // PUT route for updating contacts
-  app.put("/api/contacts", function(req, res) {
-    db.contacts.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      }).then(function(dbContacts) {
-      res.json(dbContacts);
-    });
-  });
+  
 };

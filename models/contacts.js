@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-    var Contact = sequelize.define("Contact", {
+    var Contacts = sequelize.define("Contacts", {
         first_name: {
             type: DataTypes.STRING
         },
@@ -16,5 +16,11 @@ module.exports = function(sequelize, DataTypes){
         //insert into Contacts (employerID, value)
         //values ( ( select id from empTalble where employer = 'company name'), )
     });
-    return Contact;
+    Contacts.associate = function(models) {
+        // Associating Contact with Company
+        Contacts.belongsTo(models.Company, {
+          onDelete: "cascade"
+        });
+      };
+    return Contacts;
 };

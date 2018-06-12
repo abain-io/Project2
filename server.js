@@ -160,8 +160,11 @@ app.use(passport.session());
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/login-api-routes.js")(app);
-require("./routes/companies-api-routes.js")(app);
 require("./routes/contacts-api-routes.js")(app);
+require("./routes/companies-api-routes.js")(app);
+require("./routes/jobOpenings-api-routes.js")(app);
+require("./routes/activities-api-routes.js")(app);
+
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {

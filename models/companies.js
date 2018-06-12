@@ -1,23 +1,42 @@
 // companies.js
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes){
     var Company = sequelize.define("Company", {
       // ID will be provided automatically by Sequelize
-      // Giving the Company model a name of type STRING
-      coName: DataTypes.STRING,
-      coJobsUrl: DataTypes.STRING,
-      coPriority: DataTypes.INTEGER,
-      // createdAt: sequelize.DATE,
-      // updatedAt: sequelize.DATE
-
-
+      // Giving the Company a name of type STRING
+        coName: {
+          type: DataTypes.STRING
+        },
+        coJobsUrl: {
+          type: DataTypes.STRING
+        },
+        coPriority: {
+          type: DataTypes.INTEGER
+        }
+        // createdAt: {
+        //       type: DataTypes.DATE, 
+        //   }
+        // updatedAt: {
+        //     Type: DataTypes.DATE, 
+        //   }
     });
-    // As of Friday, we decided to create a 1:many between company and contact
-    // and a 1:many between company and job openings
+    Company.associate = function(models) {
+      Company.hasMany(models.Contacts, {
+        onDelete: "cascade"
+      });
+    };
+    
+    return Company;
+  }; 
 
-    // The following is how we associated (joined) Author to Posts in blogger app, just for our info
-    // We will be creating a companyContact model and then using something like:
+  //   },
+      // createdAt: {
+      //     type: DataTypes.DATE, 
+      //     default: CURRENT_TIMESTAMP
+      // }
+      //updatedAt: {
+        //Type: Sequelize.DATE, default: CURRENT_TIMESTAMP
+      //}
 
-    // Company.belongsToMany(Contact, {through: CompanyContact });
     // Contact.belongsToMany(Company, {through: CompanyContact }); 
     
     // Author.associate = function(models) {
@@ -27,8 +46,10 @@ module.exports = function(sequelize, DataTypes) {
     // onDelete: "cascade"
     //   });
     // };
-    // Company.associate = function(models) {Company.belongsToMany(models.Contact, { as: 'Contact', through: { model: CompanyContact, unique: false }, foreignKey: 'contactId' });}
-    
+    // Company.associate = function(models) {Company.belongsToMany(models.Contact, { as: 'Contact', through: { // model: CompanyContact, unique: false }, foreignKey: 'contactId' });}
 
-    return Company;
-  }; 
+     // As of Friday, we decided to create a 1:many between company and contact
+    // and a 1:many between company and job openings
+
+    // The following is how we associated (joined) Author to Posts in blogger app, just for our info
+    // We will be creating a companyContact model and then using something like:
