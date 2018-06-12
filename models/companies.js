@@ -3,10 +3,30 @@ module.exports = function(sequelize, DataTypes) {
     var Company = sequelize.define("Company", {
       // ID will be provided automatically by Sequelize
       // Giving the Company model a name of type STRING
-      coName: DataTypes.STRING,
-      coJobsUrl: DataTypes.STRING,
-
-      coPriority: DataTypes.INTEGER
+      co_name: {
+        type: DataTypes.STRING
+      },
+      co_url: {
+        type: DataTypes.STRING
+      },
+      co_email: {
+        type: DataTypes.STRING
+      },
+      co_phone: {
+        type: DataTypes.STRING
+      },
+      co_address: {
+        type: DataTypes.STRING
+      },
+      co_city: {
+        type: DataTypes.STRING
+      },
+      co_state: {
+        type: DataTypes.STRING
+      },
+      priority: {
+        type: DataTypes.STRING
+      }
 
 
     });

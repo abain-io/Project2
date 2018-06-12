@@ -3,25 +3,26 @@
 
 module.exports = function(sequelize, DataTypes){
     var JobOpening = sequelize.define("JobOpening", {
-        jobPostingId: {
-            type: DataTypes.STRING
-        },
+    
         jobTitle: {
             type: DataTypes.STRING
         },
-        co_Id: {
-            type: DataTypes.INTEGER
-        }, 
-        jobNeighborhood: {
+        co_name: {
+            type: DataTypes.STRING
+        },
+        jobLocation: {
             type: DataTypes.STRING
         },
         jobPriority: {
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING
         }, 
         resume_file_submitted: {
             type:DataTypes.STRING
         },
         jobPostingSource: {
+            type: DataTypes.STRING
+        },
+        skillsRequired: {
             type: DataTypes.STRING
         }
         
@@ -29,12 +30,12 @@ module.exports = function(sequelize, DataTypes){
         //insert into Contacts (employerID, value)
         //values ( ( select id from empTalble where employer = 'company name'), )
     });
-    JobOpening.associate = function(models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
-        JobOpening.belongsTo(models.Company, {
-          // onDelete: "cascade" // do I need this??? **************************
-        });
-      };
+    // JobOpening.associate = function(models) {
+    //     // Associating Author with Posts
+    //     // When an Author is deleted, also delete any associated Posts
+    //     JobOpening.belongsTo(models.Company, {
+    //       // onDelete: "cascade" // do I need this??? **************************
+    //     });
+    //   };
     return JobOpening;
 };
