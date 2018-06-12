@@ -15,6 +15,15 @@ module.exports = function(sequelize, DataTypes) {
       co_phone: {
         type: DataTypes.STRING
       },
+      co_address: {
+        type: DataTypes.STRING
+      },
+      co_city: {
+        type: DataTypes.STRING
+      },
+      co_state: {
+        type: DataTypes.STRING
+      },
       priority: {
         type: DataTypes.STRING
       }

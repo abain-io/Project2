@@ -18,6 +18,9 @@ router.post("/new", function(req, res) {
     co_url: req.body.co_url,
     co_email: req.body.co_email,
     co_phone: req.body.co_number,
+    co_address: req.body.co_address,
+    co_city: req.body.co_city,
+    co_state: req.body.co_state,
     priority: req.body.priority
   });
 });

@@ -44,8 +44,8 @@ router.get("/login", function(req, res) {
   });
 
   //  companies te loads blog.html
-  router.get("/jobOpening", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/jobOpening.html"));
+  router.get("/jobOpenings", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/jobOpenings.html"));
   });
 
   //  companies te loads blog.html

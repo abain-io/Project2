@@ -1,6 +1,6 @@
 
 // When user clicks add-btn
-$("#add-btn-co").on("click", function(event) {
+$("#add-btn-com").on("click", function(event) {
     event.preventDefault();
   
     // Make a newBook object
@@ -8,8 +8,11 @@ $("#add-btn-co").on("click", function(event) {
       co_name: $("#company-name").val().trim(),
       co_url: $("#job-url").val().trim(),
       co_email: $("#company-email").val().trim(),
-      co_phone:$("#company-phone").val().trim(),
-      priority:$("#priority").val().trim()
+      co_phone: $("#company-phone").val().trim(),
+      co_address: $("#company-address").val().trim(),
+      co_city: $("#company-city").val().trim(),
+      co_state: $("#company-state").val().trim(),
+      priority: $("#priority").val().trim()
           };
 
           console.log(newCompany);
@@ -27,5 +30,8 @@ $("#add-btn-co").on("click", function(event) {
     $("#job-url").val("");
     $("#company-email").val("");
     $("#company-phone").val("");
+    $("#company-address").val("");
+    $("#company-city").val("");
+    $("#company-state").val("");
     $("#company-priority").val("");
       });
