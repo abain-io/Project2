@@ -21,7 +21,34 @@ router.get("/", function (req, res) {
   });
 });
 
-router.post("/new", function (req, res) {
+router.get("/getComCon/:id", function(req, res) {
+   console.log("api/getComCon was hit");
+   console.log("api/companies/getComCon was hit");
+   db.Company.findOne({
+    where: {
+      id: req.params.id
+      },
+    include: [db.Contacts]
+//    include: [db.JobOpenings]
+   }).then(function(dbCompany) {
+     res.json(dbCompany);
+   });
+});
+
+router.get("/getComJob/:id", function(req, res) {
+  console.log("api/getComJob was hit");
+  console.log("api/companies/getComJob was hit");
+  db.Company.findOne({
+   where: {
+     id: req.params.id
+     }
+   //include: [db.JobOpening]
+  }).then(function(dbCompany) {
+    res.json(dbCompany);
+  });
+});
+
+router.post("/new", function(req, res) {
   console.log("New Company:");
   console.log(req.body);
   db.Company.create({

@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "job_hunt_db",
+    "database": "jobHunt2_db",
     "host": "localhost",
     "port":8889,
     "dialect": "mysql"

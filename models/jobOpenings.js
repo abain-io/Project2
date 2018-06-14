@@ -38,22 +38,14 @@ module.exports = function (sequelize, DataTypes) {
         //values ( ( select id from empTalble where employer = 'company name'), )
     });
     // JobOpening.associate = function(models) {
-    //     // Associating Author with Posts
-    //     // When an Author is deleted, also delete any associated Posts
-    //     JobOpening.belongsTo(models.Company, {
-    //       // onDelete: "cascade" // do I need this??? **************************
-    //     });
-    //   };
-
-    
-//   JobOpening.associate = function(models) {
-//     // We're saying that a Post should belong to an Author
-//     // A Post can't be created without an Author due to the foreign key constraint
-//     JobOpening.belongsTo(models.Company, {
-//       foreignKey: {
-//         allowNull: false
-//       }
-//     });
-//   };
+    //       // Associating Job Opening with Company
+    //       JobOpening.belongsTo(models.Company, {
+    //         // onDelete: "cascade"
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //       });
+    //     };
+        
     return JobOpening;
 };

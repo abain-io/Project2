@@ -29,13 +29,14 @@ module.exports = function (sequelize, DataTypes) {
         //insert into Contacts (employerID, value)
         //values ( ( select id from empTalble where employer = 'company name'), )
     });
-
-    // Contacts.associate = function(models) {
-    //     // Associating Companies  with Job Openings
-        
-   
-    //      Contacts.belongsTo(models.Company);
-         
-    //    };
+    Contacts.associate = function(models) {
+        // Associating Contact with Company
+        Contacts.belongsTo(models.Company, {
+          onDelete: "cascade",
+          foreignKey: {
+              allowNull: false
+          }
+        });
+      };
     return Contacts;
 };
