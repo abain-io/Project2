@@ -5,6 +5,7 @@ var $newItemInput = $("input.new-item");
 $(document).on("click", "button.delete", deleteCompany);
 $(document).on("submit", ".add-company", insertCompany);
 $(document).on("click", ".comp-name", sortCompany);
+$(document).on("click", "button.edit", editCompany);
 var comps = [];
 
 // getComps([["co_name", "ASC" ]] );
@@ -22,8 +23,8 @@ function getComps(sort) {
   if (!sort) {
     sort = [];
   }
-  $.get("api/companies",
-    { order: sort },
+  $.get("/api/companies",
+   // { order: sort },
     function (data) {
       comps = data;
       // console.log(data);
@@ -41,12 +42,16 @@ function deleteCompany(event) {
 }
 //editing company
 function editCompany() {
-  var currentCompany = $(this).data("comp");
+  var currentCompany = $(this).data("comps");
+  console.log(comps);
   $(this).children().hide();
-  $(this).children("input.edit").val(currentCompany.co_name);
+  console.log(currentCompany);
+  $(this).children("input.edit").val(comps.currentCompany.co_name);
+  console.log("Helo3");
   $(this).children("input.edit").show();
   $(this).children("input.edit").focus();
 }
+console.log("hello4");
 
 function finishEdit(event) {
   var updatedCompany = $(this).data("comp");
@@ -104,7 +109,7 @@ function createNewRow(comp) {
       comp.priority,
       "</td>",
       "<td>",
-      "<button class='edit btn btn-primary'>Edit</button>",
+      //"<button class='edit btn btn-primary'>Edit</button>",
       "</td>",
       "<td>",
       "<button class='delete btn btn-danger'>x</button>",

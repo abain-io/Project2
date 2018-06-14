@@ -34,7 +34,6 @@ router.post("/new", function (req, res) {
   });
 });
 // DELETE route for deleting contactss
-<<<<<<< HEAD
 router.delete("/:id", function(req, res) {
 db.Contacts.destroy({
   where: {
@@ -50,26 +49,6 @@ router.put("/post", function(req, res) {
 db.Contacts.update(
   req.body,
   {
-||||||| merged common ancestors
-router.delete("/:id", function(req, res) {
-db.Contacts.destroy({
-  where: {
-    id: req.params.id
-  }
-}).then(function(dbContacts) {
-  res.json(dbContacts);
-});
-});
-
-// PUT route for updating contactss
-router.put("/", function(req, res) {
-db.Contacts.update(
-  req.body,
-  {
-=======
-router.delete("/:id", function (req, res) {
-  db.Contacts.destroy({
->>>>>>> 076ab0749cbc1e86a4e09516719ae9a6aa761b08
     where: {
       id: req.params.id
     }
