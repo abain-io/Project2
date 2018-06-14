@@ -16,8 +16,7 @@ router.get("/", function (req, res) {
     //     ['co_name', 'ASC'],
     //     ['priority', 'ASC']
     // ]
-  },
-  ).then(function (dbCompany) {
+  }).then(function (dbCompany) {
     res.json(dbCompany)
   });
 });
@@ -48,40 +47,50 @@ router.delete("/:id", function (req, res) {
 });
 
 // PUT route for updating companies
-router.put("/", function (req, res) {
-  db.Company.update(
-    req.body,
-    {
-      where: {
-        id: req.body.id
-      }
-    }).then(function (dbCompany) {
-      res.json(dbCompany);
-    }).catch(function (err) {
-      console.log(err);
-    });
+router.put("/api/companies", function (req, res) {
+  db.Company.update({
+    co_name: req.body.co_name,
+    co_url: req.body.co_url,
+    co_email: req.body.co_email,
+    co_phone: req.body.co_phone,
+    co_address: req.body.co_address,
+    co_city: req.body.co_city,
+    co_state: req.body.co_state,
+    priority: req.body.priority
 
-  app.put("/", function (req, res) {
-    db.Company.update({
-      co_name: req.body.co_name,
-      co_url: req.body.co_url,
-      co_email: req.body.co_email,
-      co_phone: req.body.co_phone,
-      co_address: req.body.co_address,
-      co_city: req.body.co_city,
-      co_state: req.body.co_state,
-      priority: req.body.priority
-    }, {
-        where: {
-          id: req.body.id
-        }
-      }).then(function (dbCompany) {
-        res.json(dbCompany);
-      }).catch(function (err) {
-        console.log(err);
-      });
+  }, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function (dbCompany) {
+    res.json(dbCompany);
+  }).catch(function (err) {
+    console.log(err);
   });
 });
+
+/*
+app.put("/", function (req, res) {
+  db.Company.update({
+    co_name: req.body.co_name,
+    co_url: req.body.co_url,
+    co_email: req.body.co_email,
+    co_phone: req.body.co_phone,
+    co_address: req.body.co_address,
+    co_city: req.body.co_city,
+    co_state: req.body.co_state,
+    priority: req.body.priority
+  }, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function (dbCompany) {
+    res.json(dbCompany);
+  }).catch(function (err) {
+    console.log(err);
+  });
+}); */
+
 
 module.exports = router;
 

@@ -37,7 +37,6 @@ module.exports = function(sequelize, DataTypes) {
       }
 
 
-
     // Company.belongsToMany(Contact, {through: CompanyContact });
     // Contact.belongsToMany(Company, {through: CompanyContact }); 
     
