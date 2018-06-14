@@ -88,7 +88,7 @@ function createNewRow(comp) {
       comp.co_name,
       "</td>",
       "<td>",
-      "<a href = https://"+comp.co_url+">",
+      "<a href = "+comp.co_url+">",
       comp.co_url,
       "</a>",
       "</td>",
