@@ -13,7 +13,8 @@ module.exports = function(sequelize, DataTypes) {
 
     // Last name datatype - string
     lastName: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
     },
     // The email cannot be null, and must be a proper email before creation
     email: {

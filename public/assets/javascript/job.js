@@ -137,6 +137,9 @@ var Messenger = function(el){
               console.log("*empty");        
               result = false;                           
             }
+            else {
+              alert("Signup Successful");
+            }
             return result;            
         });
     });
@@ -150,42 +153,7 @@ var Messenger = function(el){
           var email = $("#email-input").val()
         });
       });
-  
 
 
-
-
-
-
-
-
-         //   else if(firstName == null) {
-
-          //     $(".error-message1").text("*Required Field can not be empty").fadeIn();
-          //     $(".error-message1").css("color", "red");
-          //     console.log("*empty");
-
-          //   } else if(lastName == null) {
-          //     $(".error-message2").text("*Required Field can not be empty").fadeIn();
-          //     $(".error-message2").css("color", "red");
-          //     console.log("*empty");
-              
-          //   } else if(email == null) {
-          //   $(".error-message3").text("*Required Field can not be empty").fadeIn();
-          //   $(".error-message3").css("color", "red");
-          //   console.log("*empty");
-            
-          // } else if(password == null) {
-          //   $(".error-message4").text("*Required Field can not be empty").fadeIn();
-          //   $(".error-message4").css("color", "red");
-          //   console.log("*empty");
-
-          // } else if(confirmPassword == null) {
-          //   $(".error-message5").text("*Required Field can not be empty").fadeIn();
-          //   $(".error-message5").css("color", "red");
-          //   console.log("*empty");
-          // }
-
-          // return true;
-          // console.log("Yippppieyyyy");
-
+      // slide form
+      

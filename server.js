@@ -158,12 +158,22 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/login-api-routes.js")(app);
-require("./routes/contacts-api-routes.js")(app);
-require("./routes/companies-api-routes.js")(app);
-require("./routes/jobOpenings-api-routes.js")(app);
-require("./routes/activities-api-routes.js")(app);
+// require("./routes/html-routes.js")(app);
+// require("./routes/login-api-routes.js")(app);
+// require("./routes/contacts-api-routes.js")(app);
+// require("./routes/companies-api-routes.js")(app);
+// require("./routes/jobOpenings-api-routes.js")(app);
+// require("./routes/activities-api-routes.js")(app);
+// require("./routes/html-routes.js")(app);
+// require("./routes/login-api-routes.js")(app);
+// require("./routes/contacts-api-routes")(app);
+// require("./routes/companies-api-routes.js")(app);
+
+//Refactoring routes
+
+var routes = require("./routes");
+app.use(routes);
+
 
 
 // Syncing our database and logging a message to the user upon success

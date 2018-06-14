@@ -2,22 +2,33 @@
 module.exports = function(sequelize, DataTypes){
     var Company = sequelize.define("Company", {
       // ID will be provided automatically by Sequelize
-      // Giving the Company a name of type STRING
-        coName: {
-          type: DataTypes.STRING
-        },
-        coJobsUrl: {
-          type: DataTypes.STRING
-        },
-        coPriority: {
-          type: DataTypes.INTEGER
-        }
-        // createdAt: {
-        //       type: DataTypes.DATE, 
-        //   }
-        // updatedAt: {
-        //     Type: DataTypes.DATE, 
-        //   }
+      // Giving the Company model a name of type STRING
+      co_name: {
+        type: DataTypes.STRING
+      },
+      co_url: {
+        type: DataTypes.STRING
+      },
+      co_email: {
+        type: DataTypes.STRING
+      },
+      co_phone: {
+        type: DataTypes.STRING
+      },
+      co_address: {
+        type: DataTypes.STRING
+      },
+      co_city: {
+        type: DataTypes.STRING
+      },
+      co_state: {
+        type: DataTypes.STRING
+      },
+      priority: {
+        type: DataTypes.STRING
+      }
+
+
     });
     Company.associate = function(models) {
       Company.hasMany(models.Contacts, {
