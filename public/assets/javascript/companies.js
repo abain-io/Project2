@@ -4,9 +4,8 @@ var $newItemInput = $("input.new-item");
 
 $(document).on("click", "button.delete", deleteCompany);
 $(document).on("submit", ".add-company", insertCompany);
-$(document).on("click", "td", editCompany);
-$(document).on("keyup", "td", finishEdit);
 $(document).on("click", ".comp-name", sortCompany);
+$(document).on("click", "button.edit", editCompany);
 var comps = [];
 
 // getComps([["co_name", "ASC" ]] );
@@ -24,13 +23,13 @@ function getComps(sort) {
   if (!sort) {
     sort = [];
   }
-  $.get("api/companies",
-  //  {order: sort}, 
-   function(data) {
-    comps = data;
-    // console.log(data);
-    initializeRows();
-  });
+  $.get("/api/companies",
+   // { order: sort },
+    function (data) {
+      comps = data;
+      // console.log(data);
+      initializeRows();
+    });
 }
 //deleting entries
 function deleteCompany(event) {
@@ -43,12 +42,16 @@ function deleteCompany(event) {
 }
 //editing company
 function editCompany() {
-  var currentCompany = $(this).data("comp");
+  var currentCompany = $(this).data("comps");
+  console.log(comps);
   $(this).children().hide();
-  $(this).children("input.edit").val(currentCompany.co_name);
+  console.log(currentCompany);
+  $(this).children("input.edit").val(comps.currentCompany.co_name);
+  console.log("Helo3");
   $(this).children("input.edit").show();
   $(this).children("input.edit").focus();
 }
+console.log("hello4");
 
 function finishEdit(event) {
   var updatedCompany = $(this).data("comp");
@@ -85,7 +88,9 @@ function createNewRow(comp) {
       comp.co_name,
       "</td>",
       "<td>",
+      "<a href = "+comp.co_url+">",
       comp.co_url,
+      "</a>",
       "</td>",
       "<td>",
       comp.co_email,
@@ -106,12 +111,15 @@ function createNewRow(comp) {
       comp.priority,
       "</td>",
       "<td>",
+      //"<button class='edit btn btn-primary'>Edit</button>",
+      "</td>",
+      "<td>",
       "<button class='delete btn btn-danger'>x</button>",
       "</td>",
       "</tr>"
-      
-  
-      
+
+
+
     ].join("")
   );
 
@@ -120,36 +128,39 @@ function createNewRow(comp) {
   return $newInputRow;
 }
 
-  function insertCompany(event) {
-    event.preventDefault();
-    var comp = {
-      co_name: $newItemInput.val().trim(),
-      complete: false
-    };
-
-    $.post("/api/companies", comp, getComps);
-    $newItemInput.val("");
+function insertCompany(event) {
+  event.preventDefault();
+  var comp = {
+    co_name: $newItemInput.val().trim(),
+    complete: false
   };
 
-  function sortCompany(event) {
-    var sort = [["co_name", "ASC" ]] 
-    getComps(sort);
-    
-  }
+  $.post("/api/companies", comp, getComps);
+  $newItemInput.val("");
+};
 
-  //   function displayEmpty(id) {
-  //     var query = window.location.search;
-  //     var partial = "";
-  //     if (id) {
-  //       partial = " for Company #" + id;
-  //     }
-  //   $companyContainer.empty();
-  //   var messageH2 = $("<h2>");
-  //   messageH2.css({ "text-align": "center", "margin-top": "50px" });
-  //   messageH2.html("No addition yet" + partial + ", navigate <a href='/cms" + query +
-  //   "'>here</a> in order to get started.");
-  //   $companyContainer.append(messageH2);
-  // }
+function sortCompany(event) {
+  event.stopPropagation();
+  var order = ["co_name", "ASC"];
+  getComps();
+
+};
+
+
+
+//   function displayEmpty(id) {
+//     var query = window.location.search;
+//     var partial = "";
+//     if (id) {
+//       partial = " for Company #" + id;
+//     }
+//   $companyContainer.empty();
+//   var messageH2 = $("<h2>");
+//   messageH2.css({ "text-align": "center", "margin-top": "50px" });
+//   messageH2.html("No addition yet" + partial + ", navigate <a href='/cms" + query +
+//   "'>here</a> in order to get started.");
+//   $companyContainer.append(messageH2);
+// }
 
 
 // When user clicks add-btn
@@ -188,13 +199,13 @@ $("#add-btn-com").on("click", function (event) {
   $("#company-state").val("");
   $("#company-priority").val("");
 
-  $.get("api/companies", function(data) {
+  $.get("api/companies", function (data) {
     comps = data;
     console.log(data);
     initializeRows();
   });
 
-  
+
 
 });
 
@@ -242,7 +253,7 @@ $("#add-btn-com").on("click", function (event) {
 //   console.log("AllCompanies", data);
 //   var ourSelectElement = $("<tbody>");
 
-  
+
 //   ourSelectElement.empty();
 //     var rowsToAdd = [];
 //     for (var i = 0; i < data.length; i++) {
@@ -255,7 +266,7 @@ $("#add-btn-com").on("click", function (event) {
 //       $("<tbody>").append(ourSelectElement);
 
 //     }
-  
+
 
   // for (var i = 0; i < data.length; i++) {
   //   var theOption = $("<th value ='+data[i].id + ' >" + data[i].co_name + "</th>")

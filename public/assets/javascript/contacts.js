@@ -18,7 +18,7 @@ function initializeRows() {
   $contactContainer.prepend(rowsToAdd);
 }
 function getConts() {
-  $.get("api/contacts", function(data) {
+  $.get("api/contacts", function (data) {
     conts = data;
     initializeRows();
   });
@@ -36,30 +36,30 @@ function deleteContact(event) {
 function createNewRow(cont) {
   var $newInputRow = $(
     [ // "<button class='delete btn btn-danger'>x</button>",
-    
-    "<tr>",
-    "<td>",
-    cont.first_name,
-    "</td>",
-    "<td>",
-    cont.last_name,
-    "</td>",
-    "<td>",
-    cont.email,
-    "</td>",
-    "<td>",
-    cont.phone_number,
-    "</td>",
-    "<td>",
-    cont.work_phone,
-    "</td>",
-    "<td>",
-    cont.co_name,
-    "</td>",
-    "<td>",
-    "<button class='delete btn btn-danger'>x</button>",
-    "</td>",
-    "</tr>"
+
+      "<tr>",
+      "<td>",
+      cont.first_name,
+      "</td>",
+      "<td>",
+      cont.last_name,
+      "</td>",
+      "<td>",
+      cont.email,
+      "</td>",
+      "<td>",
+      cont.phone_number,
+      "</td>",
+      "<td>",
+      cont.work_phone,
+      "</td>",
+      "<td>",
+      cont.co_name,
+      "</td>",
+      "<td>",
+      "<button class='delete btn btn-danger'>x</button>",
+      "</td>",
+      "</tr>"
     ].join("")
   );
 
@@ -68,20 +68,22 @@ function createNewRow(cont) {
   return $newInputRow;
 }
 
-  function insertContact(event) {
-    event.preventDefault();
-    var cont = {
-      text: $newItemInput.val().trim(),
-      complete: false
-    };
+function insertContact(event) {
+  event.preventDefault();
+  var cont = {
+    text: $newItemInput.val().trim(),
+    complete: false
+  };
 
-    $.post("/api/contacts", cont, getConts);
-    $newItemInput.val("");
-  }
+  $.post("/api/contacts", cont, getConts);
+  $newItemInput.val("");
+}
 
 // The code in add.js handles what happens when the user clicks the "Add " button.
 
 // When user clicks add-btn
+
+// MARK CHANGES
 // $("#new").on("click", function(event) {
 $("#add-btn-con").on("click", function(event) {
     event.preventDefault();
@@ -118,8 +120,9 @@ $("#add-btn-con").on("click", function(event) {
     $.get("api/contacts", function(data) {
       conts = data;
       console.log(data);
-      initializeRows();
     });
+
+    // MARK CHANGES
 
     
   

@@ -17,7 +17,7 @@ function initializeRows() {
   $jobContainer.prepend(rowsToAdd);
 }
 function getJobs() {
-  $.get("api/jobOpenings", function(data) {
+  $.get("api/jobOpenings", function (data) {
     jobs = data;
     initializeRows();
   });
@@ -35,37 +35,41 @@ function deleteJob(event) {
 function createNewRow(job) {
   var $newInputRow = $(
     [ // "<button class='delete btn btn-danger'>x</button>",
-    
-    "<tr>",
-    "<td>",
-    job.jobTitle,
-    "</td>",
-    "<td>",
-    job.co_name,
-    "</td>",
-    "<td>",
-    job.jobPost_url,
-    "</td>",
-    "<td>",
-    job.jobLocation,
-    "</td>",
-    "<td>",
-    job.jobPriority,
-    "</td>",
-    "<td>",
-    job.resume_file_submitted,
-    "</td>",
-    "<td>",
-    job.jobPostingSource,
-    "</td>",
-    "<td>",
-    job.skillsRequired,
-    "</td>",
-    "<td>",
-    "<button class='delete btn btn-danger'>x</button>",
-    "</td>",
-    "</tr>"
-      
+
+      "<tr>",
+      "<td>",
+      job.jobTitle,
+      "</td>",
+      "<td>",
+      job.co_name,
+      "</td>",
+      "<td>",
+      "<a href = "+job.jobPost_url+">",
+      job.jobPost_url,
+      "</a>",
+      "</td>",
+      "<td>",
+      job.jobLocation,
+      "</td>",
+      "<td>",
+      job.jobPriority,
+      "</td>",
+      "<td>",
+      "<a href = "+job.resume_file_submitted+">",
+      job.resume_file_submitted,
+      "</a>",
+      "</td>",
+      "<td>",
+      job.jobPostingSource,
+      "</td>",
+      "<td>",
+      job.skillsRequired,
+      "</td>",
+      "<td>",
+      "<button class='delete btn btn-danger'>x</button>",
+      "</td>",
+      "</tr>"
+
     ].join("")
   );
 
@@ -74,60 +78,60 @@ function createNewRow(job) {
   return $newInputRow;
 }
 
-  function insertJob(event) {
-    event.preventDefault();
-    var job = {
-      text: $newItemInput.val().trim(),
-      complete: false
-    };
+function insertJob(event) {
+  event.preventDefault();
+  var job = {
+    text: $newItemInput.val().trim(),
+    complete: false
+  };
 
-    $.post("/api/jobOpenings", job, getJobs);
-    $newItemInput.val("");
-  }
+  $.post("/api/jobOpenings", job, getJobs);
+  $newItemInput.val("");
+}
 
 // The code in add.js handles what happens when the user clicks the "Add " button.
 
 // When user clicks add-btn
-$("#add-btn-job").on("click", function(event) {
-    event.preventDefault();
-  
-    // Make a newBook object
-    var newJob = {
-      jobTitle: $("#job-title").val().trim(),
-      co_name: $("#company-name").val().trim(),
-      jobPost_url: $("#jobPost-url").val().trim(),
-      jobLocation: $("#job-location").val().trim(),
-      jobPriority: $("#job-priority").val().trim(),
-      resume_file_submitted: $("#resume-url").val().trim(),
-      jobPostingSource: $("#job-source").val().trim(),
-      skillsRequired: $("#skills-required").val().trim()
-    };
-  
-    // Send an AJAX POST-request with jQuery
-    $.post("api/jobOpenings/new", newJob)
-      // On success, run the following code
-      .then(function(data) {
-        // Log the data we found
-        console.log(data);
-      });
-  
-    // Empty each input box by replacing the value with an empty string
-    $("#job-title").val("");
-    $("#company-name").val("");
-    $("#jobPost-url").val("");
-    $("#job-location").val("");
-    $("#job-priority").val("");
-    $("#resume-url").val("");
-    $("#job-source").val("");
-    $("#skills-required").val("");
+$("#add-btn-job").on("click", function (event) {
+  event.preventDefault();
 
-    $.get("api/jobOpenings", function(data) {
-      jobs = data;
+  // Make a newBook object
+  var newJob = {
+    jobTitle: $("#job-title").val().trim(),
+    co_name: $("#company-name").val().trim(),
+    jobPost_url: $("#jobPost-url").val().trim(),
+    jobLocation: $("#job-location").val().trim(),
+    jobPriority: $("#job-priority").val().trim(),
+    resume_file_submitted: $("#resume-url").val().trim(),
+    jobPostingSource: $("#job-source").val().trim(),
+    skillsRequired: $("#skills-required").val().trim()
+  };
+
+  // Send an AJAX POST-request with jQuery
+  $.post("api/jobOpenings/new", newJob)
+    // On success, run the following code
+    .then(function (data) {
+      // Log the data we found
       console.log(data);
-      initializeRows();
     });
-  
+
+  // Empty each input box by replacing the value with an empty string
+  $("#job-title").val("");
+  $("#company-name").val("");
+  $("#jobPost-url").val("");
+  $("#job-location").val("");
+  $("#job-priority").val("");
+  $("#resume-url").val("");
+  $("#job-source").val("");
+  $("#skills-required").val("");
+
+  $.get("api/jobOpenings", function (data) {
+    jobs = data;
+    console.log(data);
+    initializeRows();
   });
+
+});
 
   // function --> create/return one single html item
   // make call to get all contacts

@@ -7,21 +7,21 @@ var db = require("../../models");
 var router = require("express").Router();
 
 // GET route for getting all of the contactss
-router.get("/all", function(req, res) {
+router.get("/all", function (req, res) {
   console.log("This is working");
-  db.Contacts.findAll({}).then(function(dbContacts) {
+  db.Contacts.findAll({}).then(function (dbContacts) {
     res.json(dbContacts);
   });
 });
 
-router.get("/", function(req, res){
+router.get("/", function (req, res) {
   console.log("api/contacts was hit");
-  db.Contacts.findAll({}).then(function(dbContacts){
-      res.json(dbContacts)
+  db.Contacts.findAll({}).then(function (dbContacts) {
+    res.json(dbContacts)
   });
 });
 
-router.post("/new", function(req, res) {
+router.post("/new", function (req, res) {
   console.log("New Contact:");
   console.log(req.body);
   db.Contacts.create({
@@ -34,6 +34,8 @@ router.post("/new", function(req, res) {
   });
 });
 // DELETE route for deleting contactss
+// router.delete("/:id", function (req, res) {
+//   db.Contacts.destroy({
 router.delete("/:id", function(req, res) {
 db.Contacts.destroy({
   where: {
@@ -44,17 +46,30 @@ db.Contacts.destroy({
 });
 });
 
+// // PUT route for updating contactss
+// router.put("/post", function(req, res) {
+// db.Contacts.update(
+//   req.body,
+//   {
+//     where: {
+//       id: req.params.id
+//     }
+//   }).then(function (dbContacts) {
+//     res.json(dbContacts);
+//   });
+// });
+
 // PUT route for updating contactss
-router.put("/", function(req, res) {
-db.Contacts.update(
-  req.body,
-  {
-    where: {
-      id: req.body.id
-    }
-  }).then(function(dbContacts) {
-  res.json(dbContacts);
-});
+router.put("/", function (req, res) {
+  db.Contacts.update(
+    req.body,
+    {
+      where: {
+        id: req.body.id
+      }
+    }).then(function (dbContacts) {
+      res.json(dbContacts);
+    });
 });
 
 
@@ -107,5 +122,5 @@ module.exports = router;
 //   });
 // });
 
-  
+
 // };
