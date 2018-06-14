@@ -1,11 +1,15 @@
 var $companyContainer = $(".company-container");
+var $newItemInput = $("input.new-item");
 
 
-// $(document).on("click", "button.delete", deleteCompany);
+$(document).on("click", "button.delete", deleteCompany);
 $(document).on("submit", ".add-company", insertCompany);
-
+$(document).on("click", "td", editCompany);
+$(document).on("keyup", "td", finishEdit);
+$(document).on("click", ".comp-name", sortCompany);
 var comps = [];
 
+// getComps([["co_name", "ASC" ]] );
 getComps();
 
 function initializeRows() {
@@ -16,26 +20,66 @@ function initializeRows() {
   }
   $companyContainer.prepend(rowsToAdd);
 }
-function getComps() {
-  $.get("api/companies", function(data) {
+function getComps(sort) {
+  if (!sort) {
+    sort = [];
+  }
+  $.get("api/companies",
+  //  {order: sort}, 
+   function(data) {
     comps = data;
-    console.log(data);
+    // console.log(data);
     initializeRows();
   });
 }
-
+//deleting entries
 function deleteCompany(event) {
   event.stopPropagation();
   var id = $(this).data("id");
   $.ajax({
     method: "DELETE",
-    url: "/api/companies/new" + id
+    url: "/api/companies/" + id
+  }).then(getComps);
+}
+//editing company
+function editCompany() {
+  var currentCompany = $(this).data("comp");
+  $(this).children().hide();
+  $(this).children("input.edit").val(currentCompany.co_name);
+  $(this).children("input.edit").show();
+  $(this).children("input.edit").focus();
+}
+
+function finishEdit(event) {
+  var updatedCompany = $(this).data("comp");
+  if (event.which === 13) {
+    updatedCompany.co_name = $(this).children("input").val().trim();
+    $(this).blur();
+    updatedCompany(updatedCompany);
+  }
+}
+
+function updatedCompany(comp) {
+  $.ajax({
+    method: "PUT",
+    url: "/api/companies",
+    data: comp
   }).then(getComps);
 }
 
+function cancelEdit() {
+  var currentCompany = $(this).data("comp");
+  if (currentCompany) {
+    $(this).children().hide();
+    $(this).children("input.edit").val(currentCompany.co_name);
+    $(this).children("span").show();
+    $(this).children("button").show();
+  }
+}
+//displaying data on screen
 function createNewRow(comp) {
   var $newInputRow = $(
-    [ // "<button class='delete btn btn-danger'>x</button>",
+    [
       "<tr>",
       "<td>",
       comp.co_name,
@@ -61,7 +105,11 @@ function createNewRow(comp) {
       "<td>",
       comp.priority,
       "</td>",
+      "<td>",
+      "<button class='delete btn btn-danger'>x</button>",
+      "</td>",
       "</tr>"
+      
   
       
     ].join("")
@@ -75,12 +123,18 @@ function createNewRow(comp) {
   function insertCompany(event) {
     event.preventDefault();
     var comp = {
-      text: $newItemInput.val().trim(),
+      co_name: $newItemInput.val().trim(),
       complete: false
     };
 
     $.post("/api/companies", comp, getComps);
     $newItemInput.val("");
+  };
+
+  function sortCompany(event) {
+    var sort = [["co_name", "ASC" ]] 
+    getComps(sort);
+    
   }
 
   //   function displayEmpty(id) {

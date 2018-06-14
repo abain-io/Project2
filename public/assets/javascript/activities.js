@@ -1,7 +1,6 @@
 var $activityContainer = $(".activity-container");
 
-
-// $(document).on("click", "button.delete", deleteactivity);
+$(document).on("click", "button.delete", deleteActivity);
 $(document).on("submit", ".add-activities", insertActivity);
 
 var acts = [];
@@ -28,7 +27,7 @@ function deleteActivity(event) {
   var id = $(this).data("id");
   $.ajax({
     method: "DELETE",
-    url: "/api/activities/new" + id
+    url: "/api/activities/" + id
   }).then(getActs);
 }
 
@@ -55,6 +54,9 @@ function createNewRow(act) {
     "<td>",
     act.interview_date,
     "</td>",
+    "<td>",
+      "<button class='delete btn btn-danger'>x</button>",
+      "</td>",
     "</tr>"
       
     ].join("")

@@ -1,7 +1,7 @@
 var $jobContainer = $(".job-container");
 
 
-// $(document).on("click", "button.delete", deletecontact);
+$(document).on("click", "button.delete", deleteJob);
 $(document).on("submit", ".add-job_details", insertJob);
 
 var jobs = [];
@@ -28,7 +28,7 @@ function deleteJob(event) {
   var id = $(this).data("id");
   $.ajax({
     method: "DELETE",
-    url: "/api/jobOpenings/new" + id
+    url: "/api/jobOpenings/" + id
   }).then(getJobs);
 }
 
@@ -60,6 +60,9 @@ function createNewRow(job) {
     "</td>",
     "<td>",
     job.skillsRequired,
+    "</td>",
+    "<td>",
+    "<button class='delete btn btn-danger'>x</button>",
     "</td>",
     "</tr>"
       
