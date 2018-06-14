@@ -1,7 +1,8 @@
 module.exports = function(sequelize, DataTypes){
     var Contacts = sequelize.define("Contacts", {
         first_name: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
         last_name: {
             type:DataTypes.STRING
@@ -17,6 +18,7 @@ module.exports = function(sequelize, DataTypes){
         },
         co_name: {
             type: DataTypes.STRING
+            
         }
       
         //need to include employer ID and Job ID.  get from other tables joins and 

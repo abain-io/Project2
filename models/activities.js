@@ -3,7 +3,8 @@
 module.exports = function(sequelize, DataTypes){
     var Activity = sequelize.define("Activity", {
         action_item: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
         jobLocation: {
             type: DataTypes.STRING
