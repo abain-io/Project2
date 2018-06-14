@@ -34,10 +34,15 @@ module.exports = function(sequelize, DataTypes){
     });
     Company.associate = function(models) {
       Company.hasMany(models.Contacts, {
-        onDelete: "cascade"
+        //onDelete: "cascade"
       });
     };
     
+    // Company.associate = function(models) {
+    //   Company.hasMany(models.JobOpening, {
+    //     onDelete: "cascade"
+    //   });
+    // };
     return Company;
   }; 
 

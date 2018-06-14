@@ -225,8 +225,6 @@ input[type="date"]:focus:before,
 input[type="date"]:valid:before {
   content: "";
 }
-<<<<<<< HEAD
-=======
 
 #table {
   margin-left: 5px;
@@ -353,4 +351,3 @@ input[type="date"]:valid:before {
   }
 
 }
->>>>>>> ffda11caa8fe14ae031ff541f22ec656b50d6e16

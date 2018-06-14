@@ -35,11 +35,14 @@ module.exports = function(sequelize, DataTypes){
         //values ( ( select id from empTalble where employer = 'company name'), )
     });
     // JobOpening.associate = function(models) {
-    //     // Associating Author with Posts
-    //     // When an Author is deleted, also delete any associated Posts
-    //     JobOpening.belongsTo(models.Company, {
-    //       // onDelete: "cascade" // do I need this??? **************************
-    //     });
-    //   };
+    //       // Associating Job Opening with Company
+    //       JobOpening.belongsTo(models.Company, {
+    //         // onDelete: "cascade"
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //       });
+    //     };
+        
     return JobOpening;
 };

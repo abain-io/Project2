@@ -93,11 +93,14 @@ $("#add-btn-con").on("click", function(event) {
       email: $("#email-input").val().trim(),
       phone_number: $("#contact-phone").val().trim(),
       work_phone: $("#work-phone").val().trim(),
-      co_name: $("#company-name").val().trim()
+      co_name: $("#company-name").val().trim(),
+      CompanyId: $("#company-name").attr("value")
+
     };
   
     // Send an AJAX POST-request with jQuery
     $.post("api/contacts/new", newContact)
+    
       // On success, run the following code
       .then(function(data) {
         // Log the data we found
@@ -117,7 +120,21 @@ $("#add-btn-con").on("click", function(event) {
       console.log(data);
       initializeRows();
     });
+
+    
   
+  });
+
+
+  $.get("/api/companies", function (data) {
+    console.log("AllCompanies", data);
+    var ourSelectElement = $("<select class='form-control form-control-md' id = 'company-name'>");
+    for (var i = 0; i < data.length; i++) {
+      var theOption = $("<option value='" + data[i].id + "'>" + data[i].co_name + "</option>")
+      ourSelectElement.append(theOption);
+    }
+
+    $("#theDropDown").append(ourSelectElement);
   });
 
   // function --> create/return one single html item
