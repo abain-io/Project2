@@ -2,6 +2,7 @@ var $contactContainer = $(".contact-container");
 
 
 // $(document).on("click", "button.delete", deletecontact);
+$(document).on("click", "button.delete", deleteContact);
 $(document).on("submit", ".add-contacts", insertContact);
 
 var conts = [];
@@ -28,7 +29,7 @@ function deleteContact(event) {
   var id = $(this).data("id");
   $.ajax({
     method: "DELETE",
-    url: "/api/contacts/new" + id
+    url: "/api/contacts/" + id
   }).then(getConts);
 }
 
@@ -54,6 +55,9 @@ function createNewRow(cont) {
     "</td>",
     "<td>",
     cont.co_name,
+    "</td>",
+    "<td>",
+    "<button class='delete btn btn-danger'>x</button>",
     "</td>",
     "</tr>"
     ].join("")

@@ -30,7 +30,7 @@ router.get("/all", function(req, res) {
   });
     // DELETE route for deleting Activity
   router.delete("/:id", function(req, res) {
-    db.Activitivity.destroy({
+    db.Activity.destroy({
       where: {
         id: req.params.id
       }
