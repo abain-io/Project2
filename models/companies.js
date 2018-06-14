@@ -35,20 +35,7 @@ module.exports = function(sequelize, DataTypes) {
       priority: {
         type: DataTypes.STRING
       }
-
-    },
-    co_address: {
-      type: DataTypes.STRING
-    },
-    co_city: {
-      type: DataTypes.STRING
-    },
-    co_state: {
-      type: DataTypes.STRING
-    },
-    priority: {
-      type: DataTypes.STRING
-    }
+    
 
 
     // Company.belongsToMany(Contact, {through: CompanyContact });
@@ -63,15 +50,15 @@ module.exports = function(sequelize, DataTypes) {
     // };
     // Company.associate = function(models) {Company.belongsToMany(models.Contact, { as: 'Contact', through: { model: CompanyContact, unique: false }, foreignKey: 'contactId' });}
 
-    Company.associate = function(models) {
+    //Company.associate = function(models) {
      // Associating Companies  with Job Openings
       // When an Author is deleted, also delete any associated Posts
 
-     Company.hasMany(models.Contacts);
-      Company.hasMany(models.JobOpening, {
-        onDelete: "cascade"
+   // Company.hasMany(models.Contacts);
+     // Company.hasMany(models.JobOpening, {
+        //onDelete: "cascade"
       });
-    };
+    
     
 
   // Company.belongsToMany(Contact, {through: CompanyContact });
