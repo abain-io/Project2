@@ -10,6 +10,9 @@ module.exports = function(sequelize, DataTypes){
         co_name: {
             type: DataTypes.STRING
         },
+        jobPost_url: {
+            type: DataTypes.STRING
+        },
         jobLocation: {
             type: DataTypes.STRING
         },

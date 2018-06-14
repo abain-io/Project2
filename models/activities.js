@@ -12,13 +12,13 @@ module.exports = function(sequelize, DataTypes){
             type:DataTypes.STRING
         },
         due_date: {
-           type: DataTypes.DATE
+           type: DataTypes.DATEONLY
         },
         date_applied:{
-            type: DataTypes.DATE
+            type: DataTypes.DATEONLY
         },
         interview_date: {
-            type: DataTypes.DATE
+            type: DataTypes.DATEONLY
         }
 
         //need to include employer ID and Job ID.  get from other tables joins and 

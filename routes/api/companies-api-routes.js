@@ -1,5 +1,4 @@
 var db = require("../../models");
-
 var router = require("express").Router();
 
 // GET route for getting all of the companies
@@ -10,6 +9,13 @@ router.get("/all", function(req, res) {
   });
 });
 
+router.get("/", function(req, res){
+  console.log("api/companies was hit");
+  db.Company.findAll({}).then(function(dbCompany){
+      res.json(dbCompany)
+  });
+});
+
 router.post("/new", function(req, res) {
   console.log("New Company:");
   console.log(req.body);
@@ -17,7 +23,7 @@ router.post("/new", function(req, res) {
     co_name: req.body.co_name,
     co_url: req.body.co_url,
     co_email: req.body.co_email,
-    co_phone: req.body.co_number,
+    co_phone: req.body.co_phone,
     co_address: req.body.co_address,
     co_city: req.body.co_city,
     co_state: req.body.co_state,
