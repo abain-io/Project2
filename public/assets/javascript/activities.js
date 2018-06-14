@@ -43,7 +43,7 @@ function createNewRow(act) {
       act.jobLocation,
       "</td>",
       "<td>",
-      "<a href = https://"+act.resume_file_submitted+">",
+      "<a href = "+act.resume_file_submitted+">",
       act.resume_file_submitted,
       "</a>",
       "</td>",
