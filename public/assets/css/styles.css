@@ -233,6 +233,42 @@ input[type="date"]:valid:before {
   margin-left: 150px;
 
 }
+@media screen and (max-width: 1800px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1650px;
+
+  }
+
+}
+@media screen and (max-width: 1700px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1550px;
+
+  }
+
+}
+@media screen and (max-width: 1600px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1450px;
+
+  }
+
+}
+@media screen and (max-width: 1500px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1350px;
+
+  }
+
+}
 
 @media screen and (max-width: 1400px) {
 
