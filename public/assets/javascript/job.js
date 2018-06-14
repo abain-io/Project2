@@ -98,9 +98,9 @@ var Messenger = function(el){
             var result = true;
             var password = $("#password-input").val();
             var confirmPassword = $("#confirmPassword-input").val();
-            var firstName = $("#firstName").val()
-            var lastName = $("#lastName").val()
-            var email = $("#email-input").val()
+            var firstName = $("#firstName").val();
+            var lastName = $("#lastName").val();
+            var email = $("#email-input").val();
             if(firstName == "") {
               $(".error-message1").text("*First Name can not be empty").fadeIn();
               $(".error-message1").css("color", "red");
@@ -155,5 +155,29 @@ var Messenger = function(el){
       });
 
 
-      // slide form
+      // Hello user
+
+      $(function notempty(){
+    $("add-btn-com").click(function() {
+      var co_name = $("#company-name").val();
+      var co_url= $("#job-url").val();
+      var co_email= $("#company-email");
+      var co_phone= $("#company-phone");
+      var co_address=$("#company-address");
+      var co_city= $("#company-city");
+      var co_state= $("#company-state");
+      var priority= $("#priority");
+      var result = true;
+
+      if(co_name == "" && co_url == "" && co_email == "" && co_phone == "" && co_address == "" && co_city == "" && co_state == "" && priority =="") {
+        $(".error-message").text("All fields can not be empty").fadeIn();
+        $(".error-message").css("color", "red");
+        result = false; 
+      }
+      return result;
       
+    });
+  });
+
+      
+  
