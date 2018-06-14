@@ -133,6 +133,17 @@ $("#add-btn-job").on("click", function (event) {
 
 });
 
+$.get("/api/companies", function (data) {
+  console.log("AllCompanies", data);
+  var ourSelectElement = $("<select class='form-control form-control-md' id = 'company-name'>");
+  for (var i = 0; i < data.length; i++) {
+    var theOption = $("<option value='" + data[i].id + "'>" + data[i].co_name + "</option>")
+    ourSelectElement.append(theOption);
+  }
+
+  $("#theDropDown").append(ourSelectElement);
+});
+
   // function --> create/return one single html item
   // make call to get all contacts
   // forEach contact return make a function to use that func
