@@ -5,9 +5,13 @@ module.exports = function(sequelize, DataTypes){
     var JobOpening = sequelize.define("JobOpening", {
     
         jobTitle: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
         co_name: {
+            type: DataTypes.STRING
+        },
+        jobPost_url: {
             type: DataTypes.STRING
         },
         jobLocation: {

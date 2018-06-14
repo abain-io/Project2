@@ -9,6 +9,13 @@ router.get("/all", function(req, res) {
       res.json(dbJobOpening);
     });
   });
+
+  router.get("/", function(req, res){
+    console.log("api/jobOpenings was hit");
+    db.JobOpening.findAll({}).then(function(dbJobOpening){
+        res.json(dbJobOpening)
+    });
+  });
   
   router.post("/new", function(req, res) {
     console.log("New Job:");
@@ -17,6 +24,7 @@ router.get("/all", function(req, res) {
       jobTitle: req.body.jobTitle,
       co_name: req.body.co_name,
       jobLocation: req.body.jobLocation,
+      jobPost_url: req.body.jobPost_url,
       jobPriority: req.body.jobPriority,
       resume_file_submitted: req.body.resume_file_submitted,
       jobPostingSource: req.body.jobPostingSource,

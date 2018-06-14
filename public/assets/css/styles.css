@@ -17,17 +17,17 @@
   }
 
 
-button {
-    font-size: .618rem;
-    height: 10%;
+#but {
+    font-size: 100%;
+    height: 20%;
     width: 15%;
     margin: 2%;
     margin-left: 5%;
     margin-top: 10%
 }
 
-button:hover,
-button:focus {
+.btn:hover,
+.btn:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
 }
@@ -225,3 +225,132 @@ input[type="date"]:focus:before,
 input[type="date"]:valid:before {
   content: "";
 }
+<<<<<<< HEAD
+=======
+
+#table {
+  margin-left: 5px;
+}
+.icon {
+  margin-left: 150px;
+
+}
+@media screen and (max-width: 1800px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1650px;
+
+  }
+
+}
+@media screen and (max-width: 1700px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1550px;
+
+  }
+
+}
+@media screen and (max-width: 1600px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1450px;
+
+  }
+
+}
+@media screen and (max-width: 1500px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1350px;
+
+  }
+
+}
+
+@media screen and (max-width: 1400px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1250px;
+
+  }
+
+}
+@media screen and (max-width: 1300px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1150px;
+
+  }
+
+}
+@media screen and (max-width: 1200px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1050px;
+
+  }
+
+}
+@media screen and (max-width: 1100px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 950px;
+
+  }
+
+}
+@media screen and (max-width: 1000px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 850px;
+
+  }
+
+}
+@media screen and (max-width: 900px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 750px;
+
+  }
+
+}
+@media screen and (max-width: 800px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 650px;
+
+  }
+
+}
+@media screen and (max-width: 700px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 550px;
+
+  }
+
+}
+@media screen and (max-width: 600px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 450px;
+
+  }
+
+}
+>>>>>>> ffda11caa8fe14ae031ff541f22ec656b50d6e16
