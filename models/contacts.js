@@ -30,12 +30,12 @@ module.exports = function (sequelize, DataTypes) {
         //values ( ( select id from empTalble where employer = 'company name'), )
     });
 
-    Contacts.associate = function(models) {
-        // Associating Companies  with Job Openings
+    // Contacts.associate = function(models) {
+    //     // Associating Companies  with Job Openings
         
    
-         Contacts.belongsTo(models.Company);
+    //      Contacts.belongsTo(models.Company);
          
-       };
+    //    };
     return Contacts;
 };

@@ -47,16 +47,8 @@ router.delete("/:id", function (req, res) {
   });
 });
 
-<<<<<<< HEAD
- // PUT route for updating companies
-router.put("/api/companies", function(req, res) {
-||||||| merged common ancestors
- // PUT route for updating companies
-router.put("/", function(req, res) {
-=======
 // PUT route for updating companies
 router.put("/", function (req, res) {
->>>>>>> 076ab0749cbc1e86a4e09516719ae9a6aa761b08
   db.Company.update(
     req.body,
     {
