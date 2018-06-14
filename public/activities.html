@@ -44,8 +44,26 @@
       </nav>
 </head>
 <body>
+    <div class = "row">
+        <div class = "col-lg-9">
+    
+        <table class="table" id="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Job Location</th>
+                <th scope="col">Resume URL</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Date Applied</th>
+                <th scope="col">Interview Date</th>
+              </tr>
+            </thead>
+            <tbody id="activityTable" class="activity-container">
+             </tbody>
+            </table>
+            </div>
+            </div>
 
-    <body>
         <div class="area"></div>
         <nav class="main-menu">
           <nav class="navbar navbar-default">
@@ -60,7 +78,7 @@
           
           <form class="add-activities">
               <div class="form-group">
-                  <input type="text" class="form-control" id="action-item" placeholder="Action Item">
+                  <input type="text" class="form-control" id="action-item" placeholder="Task">
                 </div>
             <div class="form-group">
               <input type="text" class="form-control" id="job-location" placeholder="Job Location">

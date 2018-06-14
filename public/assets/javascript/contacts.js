@@ -1,3 +1,80 @@
+var $contactContainer = $(".contact-container");
+
+
+// $(document).on("click", "button.delete", deletecontact);
+$(document).on("submit", ".add-contacts", insertContact);
+
+var conts = [];
+
+getConts();
+
+function initializeRows() {
+  $contactContainer.empty();
+  var rowsToAdd = [];
+  for (var i = 0; i < conts.length; i++) {
+    rowsToAdd.push(createNewRow(conts[i]));
+  }
+  $contactContainer.prepend(rowsToAdd);
+}
+function getConts() {
+  $.get("api/contacts", function(data) {
+    conts = data;
+    initializeRows();
+  });
+}
+
+function deleteContact(event) {
+  event.stopPropagation();
+  var id = $(this).data("id");
+  $.ajax({
+    method: "DELETE",
+    url: "/api/contacts/new" + id
+  }).then(getConts);
+}
+
+function createNewRow(cont) {
+  var $newInputRow = $(
+    [ // "<button class='delete btn btn-danger'>x</button>",
+    
+    "<tr>",
+    "<td>",
+    cont.first_name,
+    "</td>",
+    "<td>",
+    cont.last_name,
+    "</td>",
+    "<td>",
+    cont.email,
+    "</td>",
+    "<td>",
+    cont.phone_number,
+    "</td>",
+    "<td>",
+    cont.work_phone,
+    "</td>",
+    "<td>",
+    cont.co_name,
+    "</td>",
+    "</tr>"
+    ].join("")
+  );
+
+  $newInputRow.find("button.delete").data("id", cont.id);
+  $newInputRow.data("cont", cont);
+  return $newInputRow;
+}
+
+  function insertContact(event) {
+    event.preventDefault();
+    var cont = {
+      text: $newItemInput.val().trim(),
+      complete: false
+    };
+
+    $.post("/api/contacts", cont, getConts);
+    $newItemInput.val("");
+  }
+
 // The code in add.js handles what happens when the user clicks the "Add " button.
 
 // When user clicks add-btn
@@ -10,7 +87,8 @@ $("#add-btn-con").on("click", function(event) {
       last_name: $("#lastName").val().trim(),
       email: $("#email-input").val().trim(),
       phone_number: $("#contact-phone").val().trim(),
-      work_phone: $("#work-phone").val().trim()
+      work_phone: $("#work-phone").val().trim(),
+      co_name: $("#company-name").val().trim()
     };
   
     // Send an AJAX POST-request with jQuery
@@ -27,6 +105,13 @@ $("#add-btn-con").on("click", function(event) {
     $("#email-input").val("");
     $("#contact-phone").val("");
     $("#work-phone").val("");
+    $("#company-name").val("");
+
+    $.get("api/contacts", function(data) {
+      conts = data;
+      console.log(data);
+      initializeRows();
+    });
   
   });
 

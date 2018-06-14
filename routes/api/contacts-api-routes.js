@@ -14,6 +14,13 @@ router.get("/all", function(req, res) {
   });
 });
 
+router.get("/", function(req, res){
+  console.log("api/contacts was hit");
+  db.Contacts.findAll({}).then(function(dbContacts){
+      res.json(dbContacts)
+  });
+});
+
 router.post("/new", function(req, res) {
   console.log("New Contact:");
   console.log(req.body);
@@ -22,7 +29,8 @@ router.post("/new", function(req, res) {
     last_name: req.body.last_name,
     email: req.body.email,
     phone_number: req.body.phone_number,
-    work_phone: req.body.work_phone
+    work_phone: req.body.work_phone,
+    co_name: req.body.co_name
   });
 });
 // DELETE route for deleting contactss

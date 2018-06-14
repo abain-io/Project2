@@ -8,6 +8,13 @@ router.get("/all", function(req, res) {
       res.json(dbActivity);
     });
   });
+
+  router.get("/", function(req, res){
+    console.log("api/activities was hit");
+    db.Activity.findAll({}).then(function(dbActivity){
+        res.json(dbActivity)
+    });
+  });
   
   router.post("/new", function(req, res) {
     console.log("New Activity:");
