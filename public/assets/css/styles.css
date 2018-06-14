@@ -233,6 +233,27 @@ input[type="date"]:valid:before {
   margin-left: 150px;
 
 }
+@media screen and (max-width: 2100px) {
+
+  div#btn1, div#btn2, div#btn3, div#btn4 {
+
+    left: 1950px;
+
+  }
+  @media screen and (max-width: 2000px) {
+
+    div#btn1, div#btn2, div#btn3, div#btn4 {
+  
+      left: 1850px;
+  
+    }
+    @media screen and (max-width: 1900px) {
+
+      div#btn1, div#btn2, div#btn3, div#btn4 {
+    
+        left: 1750px;
+    
+      }
 @media screen and (max-width: 1800px) {
 
   div#btn1, div#btn2, div#btn3, div#btn4 {

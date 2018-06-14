@@ -18,7 +18,7 @@ function initializeRows() {
   $contactContainer.prepend(rowsToAdd);
 }
 function getConts() {
-  $.get("api/contacts", function(data) {
+  $.get("api/contacts", function (data) {
     conts = data;
     initializeRows();
   });
@@ -36,30 +36,30 @@ function deleteContact(event) {
 function createNewRow(cont) {
   var $newInputRow = $(
     [ // "<button class='delete btn btn-danger'>x</button>",
-    
-    "<tr>",
-    "<td>",
-    cont.first_name,
-    "</td>",
-    "<td>",
-    cont.last_name,
-    "</td>",
-    "<td>",
-    cont.email,
-    "</td>",
-    "<td>",
-    cont.phone_number,
-    "</td>",
-    "<td>",
-    cont.work_phone,
-    "</td>",
-    "<td>",
-    cont.co_name,
-    "</td>",
-    "<td>",
-    "<button class='delete btn btn-danger'>x</button>",
-    "</td>",
-    "</tr>"
+
+      "<tr>",
+      "<td>",
+      cont.first_name,
+      "</td>",
+      "<td>",
+      cont.last_name,
+      "</td>",
+      "<td>",
+      cont.email,
+      "</td>",
+      "<td>",
+      cont.phone_number,
+      "</td>",
+      "<td>",
+      cont.work_phone,
+      "</td>",
+      "<td>",
+      cont.co_name,
+      "</td>",
+      "<td>",
+      "<button class='delete btn btn-danger'>x</button>",
+      "</td>",
+      "</tr>"
     ].join("")
   );
 
@@ -68,56 +68,56 @@ function createNewRow(cont) {
   return $newInputRow;
 }
 
-  function insertContact(event) {
-    event.preventDefault();
-    var cont = {
-      text: $newItemInput.val().trim(),
-      complete: false
-    };
+function insertContact(event) {
+  event.preventDefault();
+  var cont = {
+    text: $newItemInput.val().trim(),
+    complete: false
+  };
 
-    $.post("/api/contacts", cont, getConts);
-    $newItemInput.val("");
-  }
+  $.post("/api/contacts", cont, getConts);
+  $newItemInput.val("");
+}
 
 // The code in add.js handles what happens when the user clicks the "Add " button.
 
 // When user clicks add-btn
-$("#add-btn-con").on("click", function(event) {
-    event.preventDefault();
-  
-    // Make a newBook object
-    var newContact = {
-      first_name: $("#firstName").val().trim(),
-      last_name: $("#lastName").val().trim(),
-      email: $("#email-input").val().trim(),
-      phone_number: $("#contact-phone").val().trim(),
-      work_phone: $("#work-phone").val().trim(),
-      co_name: $("#company-name").val().trim()
-    };
-  
-    // Send an AJAX POST-request with jQuery
-    $.post("api/contacts/new", newContact)
-      // On success, run the following code
-      .then(function(data) {
-        // Log the data we found
-        console.log(data);
-      });
-  
-    // Empty each input box by replacing the value with an empty string
-    $("#firstName").val("");
-    $("#lastName").val("");
-    $("#email-input").val("");
-    $("#contact-phone").val("");
-    $("#work-phone").val("");
-    $("#company-name").val("");
+$("#add-btn-con").on("click", function (event) {
+  event.preventDefault();
 
-    $.get("api/contacts", function(data) {
-      conts = data;
+  // Make a newBook object
+  var newContact = {
+    first_name: $("#firstName").val().trim(),
+    last_name: $("#lastName").val().trim(),
+    email: $("#email-input").val().trim(),
+    phone_number: $("#contact-phone").val().trim(),
+    work_phone: $("#work-phone").val().trim(),
+    co_name: $("#company-name").val().trim()
+  };
+
+  // Send an AJAX POST-request with jQuery
+  $.post("api/contacts/new", newContact)
+    // On success, run the following code
+    .then(function (data) {
+      // Log the data we found
       console.log(data);
-      initializeRows();
     });
-  
+
+  // Empty each input box by replacing the value with an empty string
+  $("#firstName").val("");
+  $("#lastName").val("");
+  $("#email-input").val("");
+  $("#contact-phone").val("");
+  $("#work-phone").val("");
+  $("#company-name").val("");
+
+  $.get("api/contacts", function (data) {
+    conts = data;
+    console.log(data);
+    initializeRows();
   });
+
+});
 
   // function --> create/return one single html item
   // make call to get all contacts

@@ -36,10 +36,20 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING
       }
 
+    },
+    co_address: {
+      type: DataTypes.STRING
+    },
+    co_city: {
+      type: DataTypes.STRING
+    },
+    co_state: {
+      type: DataTypes.STRING
+    },
+    priority: {
+      type: DataTypes.STRING
+    }
 
-    });
-    // The following is how we associated (joined) Author to Posts in blogger app, just for our info
-    // We will be creating a companyContact model and then using something like:
 
     // Company.belongsToMany(Contact, {through: CompanyContact });
     // Contact.belongsToMany(Company, {through: CompanyContact }); 
@@ -57,12 +67,25 @@ module.exports = function(sequelize, DataTypes) {
      // Associating Companies  with Job Openings
       // When an Author is deleted, also delete any associated Posts
 
-      Company.hasMany(models.Contacts);
+     Company.hasMany(models.Contacts);
       Company.hasMany(models.JobOpening, {
         onDelete: "cascade"
       });
     };
     
 
-    return Company;
-  }; 
+  // Company.belongsToMany(Contact, {through: CompanyContact });
+  // Contact.belongsToMany(Company, {through: CompanyContact }); 
+
+  // Author.associate = function(models) {
+  // Associating Author with Posts
+  // When an Author is deleted, also delete any associated Posts
+  // Author.hasMany(models.Post, {
+  // onDelete: "cascade"
+  //   });
+  // };
+  // Company.associate = function(models) {Company.belongsToMany(models.Contact, { as: 'Contact', through: { model: CompanyContact, unique: false }, foreignKey: 'contactId' });}
+
+
+  return Company;
+}; 

@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes){
+module.exports = function (sequelize, DataTypes) {
     var Contacts = sequelize.define("Contacts", {
         first_name: {
             type: DataTypes.STRING,
@@ -9,10 +9,10 @@ module.exports = function(sequelize, DataTypes){
               }
         },
         last_name: {
-            type:DataTypes.STRING
+            type: DataTypes.STRING
         },
         email: {
-           type: DataTypes.STRING
+            type: DataTypes.STRING
         },
         phone_number: {
             type: DataTypes.STRING
@@ -22,9 +22,9 @@ module.exports = function(sequelize, DataTypes){
         },
         co_name: {
             type: DataTypes.STRING
-            
+
         }
-      
+
         //need to include employer ID and Job ID.  get from other tables joins and 
         //insert into Contacts (employerID, value)
         //values ( ( select id from empTalble where employer = 'company name'), )

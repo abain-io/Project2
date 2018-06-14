@@ -1,9 +1,9 @@
 // job_openings.js to create the table which will hold job openings and be 
 // associated with a company in the companies table
 
-module.exports = function(sequelize, DataTypes){
+module.exports = function (sequelize, DataTypes) {
     var JobOpening = sequelize.define("JobOpening", {
-    
+
         jobTitle: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -22,9 +22,9 @@ module.exports = function(sequelize, DataTypes){
         },
         jobPriority: {
             type: DataTypes.STRING
-        }, 
+        },
         resume_file_submitted: {
-            type:DataTypes.STRING
+            type: DataTypes.STRING
         },
         jobPostingSource: {
             type: DataTypes.STRING
@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes){
         skillsRequired: {
             type: DataTypes.STRING
         }
-        
+
         //need to include employer ID and Job ID.  get from other tables joins and 
         //insert into Contacts (employerID, value)
         //values ( ( select id from empTalble where employer = 'company name'), )
