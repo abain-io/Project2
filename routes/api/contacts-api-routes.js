@@ -34,6 +34,8 @@ router.post("/new", function (req, res) {
   });
 });
 // DELETE route for deleting contactss
+// router.delete("/:id", function (req, res) {
+//   db.Contacts.destroy({
 router.delete("/:id", function(req, res) {
 db.Contacts.destroy({
   where: {
@@ -44,18 +46,18 @@ db.Contacts.destroy({
 });
 });
 
-// PUT route for updating contactss
-router.put("/post", function(req, res) {
-db.Contacts.update(
-  req.body,
-  {
-    where: {
-      id: req.params.id
-    }
-  }).then(function (dbContacts) {
-    res.json(dbContacts);
-  });
-});
+// // PUT route for updating contactss
+// router.put("/post", function(req, res) {
+// db.Contacts.update(
+//   req.body,
+//   {
+//     where: {
+//       id: req.params.id
+//     }
+//   }).then(function (dbContacts) {
+//     res.json(dbContacts);
+//   });
+// });
 
 // PUT route for updating contactss
 router.put("/", function (req, res) {

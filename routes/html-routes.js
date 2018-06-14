@@ -54,6 +54,11 @@ router.get("/activities", isAuthenticated, function (req, res) {
 });
 module.exports = router;
 
+router.get("/association", function (req, res) {
+  res.sendFile(path.join(__dirname, "../public/association.html"));
+});
+module.exports = router;
+
 
 // module.exports = function(router) {
 

@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "root",
     "database": "job_hunt_db",
     "host": "localhost",
     "port":8889,
