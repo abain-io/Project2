@@ -8,6 +8,13 @@ router.get("/all", function(req, res) {
       res.json(dbActivity);
     });
   });
+
+  router.get("/", function(req, res){
+    console.log("api/activities was hit");
+    db.Activity.findAll({}).then(function(dbActivity){
+        res.json(dbActivity)
+    });
+  });
   
   router.post("/new", function(req, res) {
     console.log("New Activity:");
@@ -23,7 +30,7 @@ router.get("/all", function(req, res) {
   });
     // DELETE route for deleting Activity
   router.delete("/:id", function(req, res) {
-    db.Activitivity.destroy({
+    db.Activity.destroy({
       where: {
         id: req.params.id
       }

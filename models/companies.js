@@ -4,7 +4,8 @@ module.exports = function(sequelize, DataTypes) {
       // ID will be provided automatically by Sequelize
       // Giving the Company model a name of type STRING
       co_name: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
       },
       co_url: {
         type: DataTypes.STRING
@@ -14,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       co_phone: {
         type: DataTypes.STRING
+        
       },
       co_address: {
         type: DataTypes.STRING

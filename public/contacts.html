@@ -45,6 +45,28 @@
 </head>
 <body>
 
+    <div class = "row">
+        <div class = "col-lg-9">
+    
+        <table class="table" id="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Work Phone</th>
+                <th scope="col">Company Name</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody id="contactTable" class="contact-container">
+      
+              </tbody>
+              </table>
+              </div>
+              </div>
+
       <div class="area"></div>
                   <nav class="main-menu">
                     <nav class="navbar navbar-default">
@@ -81,6 +103,13 @@
                           <input type="text" class="form-control" id="work-phone" minlength="10" maxlength="10" placeholder="Work Phone">
                           
                         </div>
+                        <div class="form-group">
+                        <select class="form-control form-control-md" id = "company-name">
+                            <option value="" disabled selected>Company Name</option>
+                            <option>None</option>
+                            <option class = "company-dropdown"></option>
+                          </select>
+                          </div>
                         
                       
                       <input type = "submit" value = "Add Contact" class="btn btn-outline-success my-2 my-sm-0" id = "add-btn-con" type="submit"/>
@@ -92,6 +121,7 @@
                   </div>
                       
                   </nav>
+                  
                   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
                   <script src="assets/javascript/job.js"></script>

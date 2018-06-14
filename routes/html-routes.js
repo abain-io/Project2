@@ -34,22 +34,22 @@ router.get("/login", function(req, res) {
   });
 
   // contacts route loads cms.html
-  router.get("/contacts", function(req, res) {
+  router.get("/contacts",  isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/contacts.html"));
   });
 
   //  companies te loads blog.html
-  router.get("/companies", function(req, res) {
+  router.get("/companies", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/companies.html"));
   });
 
   //  companies te loads blog.html
-  router.get("/jobOpenings", function(req, res) {
+  router.get("/jobOpenings", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/jobOpenings.html"));
   });
 
   //  companies te loads blog.html
-  router.get("/activities", function(req, res) {
+  router.get("/activities",  isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/activities.html"));
   });
 module.exports = router;

@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   // this function is strict...
-}());
+});
 
 var fs        = require('fs');
 var path      = require('path');

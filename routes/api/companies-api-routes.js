@@ -1,5 +1,4 @@
 var db = require("../../models");
-
 var router = require("express").Router();
 
 // GET route for getting all of the companies
@@ -10,6 +9,16 @@ router.get("/all", function(req, res) {
   });
 });
 
+router.get("/", function(req, res){
+  console.log("api/companies was hit");
+  db.Company.findAll({
+    order : req.order
+  },
+  ).then(function(dbCompany){
+      res.json(dbCompany)
+  });
+});
+
 router.post("/new", function(req, res) {
   console.log("New Company:");
   console.log(req.body);
@@ -17,7 +26,7 @@ router.post("/new", function(req, res) {
     co_name: req.body.co_name,
     co_url: req.body.co_url,
     co_email: req.body.co_email,
-    co_phone: req.body.co_number,
+    co_phone: req.body.co_phone,
     co_address: req.body.co_address,
     co_city: req.body.co_city,
     co_state: req.body.co_state,
@@ -45,6 +54,29 @@ router.put("/", function(req, res) {
       }
     }).then(function(dbCompany) {
     res.json(dbCompany);
+  }).catch(function (err) {
+    console.log(err);
+  });
+
+  app.put("/", function (req, res) {
+    db.Company.update({
+      co_name: req.body.co_name,
+    co_url: req.body.co_url,
+    co_email: req.body.co_email,
+    co_phone: req.body.co_phone,
+    co_address: req.body.co_address,
+    co_city: req.body.co_city,
+    co_state: req.body.co_state,
+    priority: req.body.priority
+    }, {
+        where: {
+          id: req.body.id
+        }
+      }).then(function (dbCompany) {
+        res.json(dbCompany);
+      }).catch(function (err) {
+        console.log(err);
+      });
   });
 });
 
