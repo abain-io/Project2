@@ -13,6 +13,7 @@ $("#add-btn-com").on("click", function(event) {
       co_city: $("#company-city").val().trim(),
       co_state: $("#company-state").val().trim(),
       priority: $("#priority").val().trim()
+      userId: 
           };
 
           console.log(newCompany);
