@@ -1,6 +1,6 @@
 // activities.js to create activities table, which contains action items 
 // which will be associated with specific job openings
-module.exports = function(sequelize, DataTypes){
+module.exports = function (sequelize, DataTypes) {
     var Activity = sequelize.define("Activity", {
         action_item: {
             type: DataTypes.STRING,
@@ -10,12 +10,12 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.STRING
         },
         resume_file_submitted: {
-            type:DataTypes.STRING
+            type: DataTypes.STRING
         },
         due_date: {
-           type: DataTypes.DATEONLY
+            type: DataTypes.DATEONLY
         },
-        date_applied:{
+        date_applied: {
             type: DataTypes.DATEONLY
         },
         interview_date: {
