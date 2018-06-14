@@ -45,7 +45,7 @@ router.delete("/:id", function(req, res) {
 });
 
  // PUT route for updating companies
-router.put("/", function(req, res) {
+router.put("/api/companies", function(req, res) {
   db.Company.update(
     req.body,
     {

@@ -45,7 +45,7 @@ db.Contacts.destroy({
 });
 
 // PUT route for updating contactss
-router.put("/", function(req, res) {
+router.put("/post", function(req, res) {
 db.Contacts.update(
   req.body,
   {

@@ -106,6 +106,9 @@ function createNewRow(comp) {
       comp.priority,
       "</td>",
       "<td>",
+      "<button class='edit btn btn-primary'>Edit</button>",
+      "</td>",
+      "<td>",
       "<button class='delete btn btn-danger'>x</button>",
       "</td>",
       "</tr>"

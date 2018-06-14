@@ -6,7 +6,10 @@ module.exports = function(sequelize, DataTypes){
     
         jobTitle: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1, 140]
+              }
         },
         co_name: {
             type: DataTypes.STRING
