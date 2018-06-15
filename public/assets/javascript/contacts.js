@@ -131,9 +131,12 @@ $("#add-btn-con").on("click", function(event) {
 
   $.get("/api/companies", function (data) {
     console.log("AllCompanies", data);
-    var ourSelectElement = $("<select class='form-control form-control-md' id = 'company-name'>");
+    var ourSelectElement = $("#company-name");
+    // var ourSelectElement = $("<select class='form-control form-control-md' id = 'company-name'>");
+    // var theOption = $("<option value='' disabled selected>Company Name</option>")
     for (var i = 0; i < data.length; i++) {
-      var theOption = $("<option value='" + data[i].id + "'>" + data[i].co_name + "</option>")
+    
+      var theOption = $("<option value='" + data[i].co_name + "'>" + data[i].co_name + "</option>")
       ourSelectElement.append(theOption);
     }
 
