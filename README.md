@@ -1,5 +1,5 @@
-# codeCampProjectTwo
-Project2
+#Project2
+
 Our web application provides a central area for most of what we need to manage the job hunt. It is not a job search tool.
 
 It is a Database for Companies, Contacts, Job Opportunities, Activities
