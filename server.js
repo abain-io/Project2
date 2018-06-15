@@ -179,7 +179,7 @@ app.use(routes);
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(port, function() {
-    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", port, port);
   });
 });
 
