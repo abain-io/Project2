@@ -6,17 +6,17 @@ _It is not a job search tool._
 It is a Database for Companies, Contacts, Job Opportunities, Activities
 We wanted to take advantage of relational aspect of mySQL:
 “Please walk us through your resumé” . . . which resumé?
-Better identify and leverage your network
+Better identification and improved leverage of your network
 Better organization and efficiency
-Support concentrating on the “Top 40” companies of your search
-Help us to read fewer job descriptions and have a higher hit rate
-Aid your follow through
+Supports concentrating on the “Top 40” companies of your search
+Helps to read fewer job descriptions and have a higher hit rate
+Aids in your follow through
 
 Questions We Want To Be Able To Answer:
 Which prospective employers are most important to me?
-Good company
-Location
-I have contacts there
+Good company?
+Good location?
+I have contacts there?
 Who do I know that works at company x?
 Who do I know that has a connection at company x?
 What open action items do I have?
@@ -29,4 +29,4 @@ Built With:
 HTML, CSS, JavaScript, Node, Express, MySQL and sequelize, MVC, Heroku, JawsdB, Passport and dcrypt.
 
 Authors:
-Isha Khan, Mark Bloodgood, Joseph Esquitin, and Andrew Bain.
+Isha Khan, Mark Bloodgood, Andrew Bain and Joseph Esquitin.
