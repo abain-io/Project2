@@ -15,7 +15,7 @@ Questions We Want To Be Able To Answer:
 Which prospective employers are most important to me?
 Good company?
 Good location?
-I have contacts there?
+Do I have contacts there?
 Who do I know that works at company x?
 Who do I know that has a connection at company x?
 What open action items do I have?
@@ -28,4 +28,4 @@ Built With:
 HTML, CSS, JavaScript, Node, Express, MySQL and sequelize, MVC, Heroku, JawsdB, Passport and dcrypt.
 
 Authors:
-Isha Khan, Mark Bloodgood, Andrew Bain and Joseph Esquitin.
+Isha Khan, Andrew Bain, Mark Bloodgood, and Joseph Esquitin.
