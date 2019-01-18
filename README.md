@@ -1,4 +1,4 @@
-# Project2: Job Hunt App
+# Project 2: Job Hunt App
 
 Our web application provides a central area for most of what we need to manage the job hunt process. 
 _It is not a job search tool._
